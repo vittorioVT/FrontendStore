@@ -1,0 +1,16 @@
+.mat-card-image{
+  width: 200px;
+  height: 200px;
+
+
+}
+.mat-card-content {
+  width: 200px;
+}
+.mat-card-title{
+  font-family: Verdana;
+  font-size: 14px;
+  font-weight: bold;
+  color: darkolivegreen;
+
+}
