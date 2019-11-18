@@ -8,6 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { ProductStoreService } from './product-store.service';
 //service
 import { AppRouterModule } from './app-router.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,9 @@ import { AppRouterModule } from './app-router.module';
   ],
   imports: [
     BrowserModule,
-    AppRouterModule
+    AppRouterModule,
+    HttpClientModule
+
   ],
   providers: [ProductStoreService],
   bootstrap: [AppComponent]
