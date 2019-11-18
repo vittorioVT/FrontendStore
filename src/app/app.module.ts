@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { ProductsStoreComponent } from './products-store/products-store.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { ProductStoreService } from './product-store.service';
+//service
+import { AppRouterModule } from './app-router.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +17,10 @@ import { HeaderComponent } from './header/header.component';
     HeaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRouterModule
   ],
-  providers: [],
+  providers: [ProductStoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
