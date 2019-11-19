@@ -14,7 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 //material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule} from '@angular/material';
+import { MatButtonModule, MatCardModule } from '@angular/material';
 
 
 @NgModule({
@@ -33,9 +33,12 @@ import { MatButtonModule, MatCardModule} from '@angular/material';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+   ],
 
-
+  exports: [
+    MatCardModule
   ],
+
   providers: [ProductStoreService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
