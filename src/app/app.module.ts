@@ -14,7 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 //material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule, MatCardModule } from '@angular/material';
+import {
+  MatButtonModule, MatCardModule,
+  MatInputModule, MatToolbarModule,
+} from '@angular/material';
 
 
 @NgModule({
@@ -33,6 +36,8 @@ import { MatButtonModule, MatCardModule } from '@angular/material';
     BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
+    MatInputModule,
+    MatToolbarModule,
    ],
 
   exports: [
