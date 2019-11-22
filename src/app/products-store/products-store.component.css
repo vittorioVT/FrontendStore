@@ -1,20 +1,16 @@
-.wrapper {
-  display: flex;
-}
 
 .mat-card {
-  width: 250px;
+  width: 280px;
   height: 400px;
-  /*border: 1px solid red;*/
-  margin-left: 0px;
-  margin-right: 0px;
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin: 10px 10px 10px 30px;
+  display: inline-block;
+  text-align: justify;
+  vertical-align: top;
 }
 
 .mat-card-image{
-  width: 250px;
-  height: 250px;
+  width: 260px;
+  height: 260px;
   margin: 0 0 0 0;
 }
 
