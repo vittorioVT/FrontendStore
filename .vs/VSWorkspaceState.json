@@ -7,6 +7,6 @@
     "\\src\\app\\Interfaces",
     "\\src\\app\\products-store"
   ],
-  "SelectedNode": "\\src\\styles.css",
+  "SelectedNode": "\\src\\app\\products-store\\products-store.component.ts",
   "PreviewInSolutionExplorer": false
 }

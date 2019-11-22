@@ -1,3 +1,6 @@
+.wrapper {
+  display: flex;
+}
 
 .mat-card {
   width: 250px;
@@ -47,8 +50,9 @@ mat-card-subtitle {
 }
 
 .mat-card-actions {
-  text-align: right;
+  margin-left: 10px;
   margin-top: 10px;
+
 }
 
 .button {
@@ -57,4 +61,12 @@ mat-card-subtitle {
   font-family: Verdana;
   font-weight: bold;
   font-size: 14px;
+  text-align: left;
+}
+
+.price {
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 20px;
+  color: red;
 }

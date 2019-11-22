@@ -1,4 +1,5 @@
 @import '@angular/material/prebuilt-themes/indigo-pink.css';
 body {
-  background-color: rgb(230, 255, 230);
+  background-color:	rgb(249, 255, 229);
+  /*background-color: rgb(255, 255, 230);*/
 }

@@ -1,4 +1,4 @@
-
+<div id="wrapper"></div>
 <mat-card *ngFor="let items of datasource">
   <mat-card-header>
     <mat-card-title>{{items.Name}}</mat-card-title>
@@ -9,8 +9,8 @@
     <span class="color">{{items.Color}}</span>&nbsp;<span class="size"> {{items.Size}}</span>
   </mat-card-content>-->
   <mat-card-actions>
-    <button mat-button mat-raised-button class="button">Купити</button>
+    <span class="price">{{items.Price}} грн. </span>&nbsp;&nbsp;&nbsp;
+    <button mat-button mat-raised-button (onClick)="click()" class="button">Купити</button>
   </mat-card-actions>
-
 </mat-card>
 
