@@ -21,6 +21,9 @@ import {
 import { ContactsComponent } from './contacts/contacts.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DressBoyComponent } from './dress-boy/dress-boy.component';
+import { DressGirlComponent } from './dress-girl/dress-girl.component';
+import { AttributsPlComponent } from './attributs-pl/attributs-pl.component';
+import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
 
 
 @NgModule({
@@ -31,7 +34,10 @@ import { DressBoyComponent } from './dress-boy/dress-boy.component';
     HeaderComponent,
     ContactsComponent,
     AboutusComponent,
-    DressBoyComponent
+    DressBoyComponent,
+    DressGirlComponent,
+    AttributsPlComponent,
+    AccessorsPlComponent
   ],
   imports: [
     BrowserModule,
