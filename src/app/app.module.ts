@@ -18,6 +18,9 @@ import {
   MatButtonModule, MatCardModule,
   MatInputModule, MatToolbarModule,
 } from '@angular/material';
+import { ContactsComponent } from './contacts/contacts.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { DressBoyComponent } from './dress-boy/dress-boy.component';
 
 
 @NgModule({
@@ -25,7 +28,10 @@ import {
     AppComponent,
     ProductsStoreComponent,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    ContactsComponent,
+    AboutusComponent,
+    DressBoyComponent
   ],
   imports: [
     BrowserModule,

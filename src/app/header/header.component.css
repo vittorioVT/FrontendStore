@@ -1,0 +1,32 @@
+.header {
+  background-color: rgb(140, 178, 102);
+  margin-bottom: 3px;
+}
+  .header button {
+    font-family: Verdana;
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: rgb(255, 255, 102);
+  }
+
+.header2 {
+  display: inline-block;
+  background-color: rgb(105, 133, 76);
+  text-align: center;
+  padding-top: 10px;
+  margin-top: 3px;
+}
+  .header2 button {
+    font-family: Verdana;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    margin-right: 20px;
+
+  }
+.shapca {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(140, 178, 102);
+}
