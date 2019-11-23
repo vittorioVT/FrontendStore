@@ -11,6 +11,7 @@ import { ProductStoreService } from './product-store.service';
 //service
 import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthFrontService } from './auth-front.service';
 
 //material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -37,7 +38,8 @@ import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
     DressBoyComponent,
     DressGirlComponent,
     AttributsPlComponent,
-    AccessorsPlComponent
+    AccessorsPlComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,7 @@ import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
     MatCardModule
   ],
 
-  providers: [ProductStoreService],
+  providers: [ProductStoreService, AuthFrontService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
