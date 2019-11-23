@@ -8,6 +8,7 @@ import { DressBoyComponent } from './dress-boy/dress-boy.component';
 import { DressGirlComponent } from './dress-girl/dress-girl.component';
 import { AttributsPlComponent } from './attributs-pl/attributs-pl.component';
 import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
+import { RegisterComponent } from './register/register.component';
 
 import { NgModule } from '@angular/core';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'dressgirl', component: DressGirlComponent },
   { path: 'attributs', component: AttributsPlComponent },
   { path: 'accessors', component: AccessorsPlComponent },
+  { path: 'register', component: RegisterComponent },
 
 ]
 

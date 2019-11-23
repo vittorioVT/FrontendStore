@@ -25,6 +25,12 @@ import { DressBoyComponent } from './dress-boy/dress-boy.component';
 import { DressGirlComponent } from './dress-girl/dress-girl.component';
 import { AttributsPlComponent } from './attributs-pl/attributs-pl.component';
 import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
+import { RegisterComponent } from './register/register.component';
+
+//forms
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -39,6 +45,7 @@ import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
     DressGirlComponent,
     AttributsPlComponent,
     AccessorsPlComponent,
+    RegisterComponent,
 
   ],
   imports: [
@@ -52,6 +59,10 @@ import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
     MatCardModule,
     MatInputModule,
     MatToolbarModule,
+
+    //forms
+    ReactiveFormsModule,
+
    ],
 
   exports: [
