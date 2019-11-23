@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthFrontService {
 
-  baseUrl: string = 'http://localhost:13764/authfrontend';
+  baseUrl: string = 'http://localhost:13764/authfrontend/';
 
   constructor(private http: HttpClient,
               private router: Router) { }
