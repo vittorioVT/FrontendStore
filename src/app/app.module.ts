@@ -29,6 +29,7 @@ import { RegisterComponent } from './register/register.component';
 
 //forms
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -46,6 +47,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AttributsPlComponent,
     AccessorsPlComponent,
     RegisterComponent,
+    LoginComponent,
 
   ],
   imports: [

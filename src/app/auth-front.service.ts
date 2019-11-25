@@ -30,7 +30,7 @@ export class AuthFrontService {
   }
 
   get isAuthenticated() {
-    return !!localStorage.getItem('token_value');
+    return localStorage.getItem('token_value');
 
   }
 

@@ -7,7 +7,7 @@
     <button mat-button *ngIf="auth.isAuthenticated">ласкаво просимо, {{auth.getUserName()}}</button>
     <button mat-button *ngIf="auth.isAuthenticated" (click)="auth.logout()">вийти</button>
     <button mat-button *ngIf="!auth.isAuthenticated" routerLink="/register">реєстрація</button>
-    <button mat-button routerLink="/login">увійти</button>
+    <button mat-button *ngIf="!auth.isAuthenticated" routerLink="/login">увійти</button>
   </mat-toolbar>
   <div class="shapca">
     <img src="http://localhost:13764/Img/shapka_04.png" alt="shapca" />
