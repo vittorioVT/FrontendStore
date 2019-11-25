@@ -20,5 +20,20 @@ export class AuthFrontService {
     return this.http.post(this.baseUrl + 'login', user);
   }
 
+  logout() {
+    localStorage.removeItem('userName');
+    localStorage.removeItem('token_value');
+  }
+
+  getUserName() {
+    return localStorage.getItem('userName');
+  }
+
+  get isAuthenticated() {
+    return !!localStorage.getItem('token_value');
+
+  }
+
+
 
 }

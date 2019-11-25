@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthFrontService } from '../auth-front.service';
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private auth: AuthFrontService) { }
 
   ngOnInit() {
   }

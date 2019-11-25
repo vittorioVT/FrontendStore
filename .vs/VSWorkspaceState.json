@@ -11,6 +11,6 @@
     "\\src\\app\\header",
     "\\src\\app\\register"
   ],
-  "SelectedNode": "\\src\\app\\app-router.module.ts",
+  "SelectedNode": "\\src\\app\\auth-front.service.ts",
   "PreviewInSolutionExplorer": false
 }
