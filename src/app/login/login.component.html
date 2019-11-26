@@ -2,11 +2,11 @@
   <span class="createForm">Увійти в свій обліковий запис</span>
   <br />
   <mat-form-field>
-    <input matInput placeholder="Введіть ім'я" type="text" />
+    <input matInput placeholder="Введіть ім'я" [(ngModel)]="loginData.userName" type="text" />
   </mat-form-field>
   <br />
   <mat-form-field>
-    <input matInput placeholder="Введіть пароль" type="password" />
+    <input matInput placeholder="Введіть пароль" [(ngModel)]="loginData.password" type="password" />
   </mat-form-field>
   <br />
   <button mat-raised-button class="login" (click)="login()">Увійти</button>

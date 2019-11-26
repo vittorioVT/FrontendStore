@@ -8,9 +8,10 @@ import { AuthFrontService } from '../auth-front.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private auth: AuthFrontService) { }
+  constructor(private auth: AuthFrontService ) { }
 
   ngOnInit() {
+   
   }
-
 }
+

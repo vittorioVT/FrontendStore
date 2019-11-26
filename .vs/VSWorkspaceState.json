@@ -7,10 +7,10 @@
     "\\src\\app\\accessors-pl",
     "\\src\\app\\attributs-pl",
     "\\src\\app\\contacts",
-    "\\src\\app\\dress-boy",
     "\\src\\app\\header",
-    "\\src\\app\\register"
+    "\\src\\app\\Interfaces",
+    "\\src\\app\\products-store"
   ],
-  "SelectedNode": "\\src\\app\\auth-front.service.ts",
+  "SelectedNode": "\\src\\app\\header\\header.component.css",
   "PreviewInSolutionExplorer": false
 }

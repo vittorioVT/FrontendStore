@@ -27,7 +27,30 @@
 
   }
 .shapca {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
-  text-align: center;
+  justify-content: center;
   background-color: rgb(140, 178, 102);
+}
+
+
+.sort {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.search {
+  display: inline-block;
+  text-align: justify;
+  vertical-align: top;
+  
+}
+.image{
+  border: 0px solid red;
+
+}
+.navigator {
+  border: 0px solid red;
 }

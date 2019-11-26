@@ -18,7 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule,
   MatInputModule, MatToolbarModule,
+  MatSortModule,
 } from '@angular/material';
+
 import { ContactsComponent } from './contacts/contacts.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { DressBoyComponent } from './dress-boy/dress-boy.component';
@@ -26,10 +28,13 @@ import { DressGirlComponent } from './dress-girl/dress-girl.component';
 import { AttributsPlComponent } from './attributs-pl/attributs-pl.component';
 import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 //forms
 import { ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './login/login.component';
+import { FormsModule } from '@angular/forms';
+import { SearchPipe } from './search.pipe';
+
 
 
 
@@ -48,6 +53,7 @@ import { LoginComponent } from './login/login.component';
     AccessorsPlComponent,
     RegisterComponent,
     LoginComponent,
+    SearchPipe,
 
   ],
   imports: [
@@ -61,9 +67,11 @@ import { LoginComponent } from './login/login.component';
     MatCardModule,
     MatInputModule,
     MatToolbarModule,
+    MatSortModule,
 
     //forms
     ReactiveFormsModule,
+    FormsModule,
 
    ],
 
