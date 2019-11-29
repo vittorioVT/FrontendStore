@@ -1,7 +1,7 @@
 <div header-main>
   <mat-toolbar class="header">
     <button mat-button routerLink="/">ГОЛОВНА</button>
-    <button mat-button routerLink="/aboutus">ПРО НАС</button>
+    <button  mat-button routerLink="/aboutus">ПРО НАС</button>
     <button mat-button routerLink="/contacts">КОНТАКТИ</button>
     <span style="flex: 1 1 auto"></span>
     <button mat-button *ngIf="auth.isAuthenticated">ласкаво просимо, {{auth.getUserName()}}</button>

@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DressBoyComponent implements OnInit {
 
+  myColor: string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  changeColor(color) {
+    this.myColor = color;
   }
 
 }

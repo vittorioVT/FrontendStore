@@ -18,7 +18,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule,
   MatInputModule, MatToolbarModule,
-  MatSortModule,
+  MatSortModule, MatPaginatorModule,
 } from '@angular/material';
 
 import { ContactsComponent } from './contacts/contacts.component';
@@ -34,6 +34,8 @@ import { LoginComponent } from './login/login.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
+import { CartComponent } from './products-store/cart/cart.component';
+
 
 
 
@@ -54,6 +56,8 @@ import { SearchPipe } from './search.pipe';
     RegisterComponent,
     LoginComponent,
     SearchPipe,
+    CartComponent,
+    
 
   ],
   imports: [
@@ -68,6 +72,7 @@ import { SearchPipe } from './search.pipe';
     MatInputModule,
     MatToolbarModule,
     MatSortModule,
+    MatPaginatorModule,
 
     //forms
     ReactiveFormsModule,

@@ -11,6 +11,6 @@
     "\\src\\app\\Interfaces",
     "\\src\\app\\products-store"
   ],
-  "SelectedNode": "\\src\\app\\header\\header.component.css",
+  "SelectedNode": "\\src\\app\\Interfaces\\productElements.ts",
   "PreviewInSolutionExplorer": false
 }

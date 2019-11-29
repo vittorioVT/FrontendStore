@@ -8,7 +8,15 @@
     font-weight: bold;
     margin-right: 10px;
     color: rgb(255, 255, 102);
+    /*color: rgb(105, 133, 76);*/
   }
+
+    .header button {
+      text-shadow: 5px 5px 5px #111;
+    }
+    .header button :hover, :visited, :active {
+      background-color: rgb(140, 178, 102);
+    }
 
 .header2 {
   display: inline-block;
@@ -53,4 +61,8 @@
 }
 .navigator {
   border: 0px solid red;
+}
+.shadow {
+  /*box-shadow: 5px 5px 14px 1px #e5e5e5,
+              2px 2px 3px 0px #000;*/
 }

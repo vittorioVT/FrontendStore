@@ -12,6 +12,7 @@ export class ProductStoreService {
 
   getAll() {
     return this.http.get(this.baseUrl);
+    
   }
 
 }
