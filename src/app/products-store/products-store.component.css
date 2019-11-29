@@ -1,5 +1,4 @@
-
-.cardMat {
+.mat-card {
   width: 280px;
   height: 400px;
   margin: 10px 10px 10px 30px;
@@ -8,12 +7,11 @@
   vertical-align: top;
 }
 
-.cardMatImage {
+.mat-card-image {
   width: 260px;
   height: 260px;
   margin: 0 0 0 0;
 }
-
 
 .color {
   display: inline-block;
@@ -26,26 +24,26 @@
   text-align: right;
   margin-left: 20px;
 }
-.cardMatTitle {
+.mat-card-title {
   font-family: Verdana;
   font-size: 16px;
   font-weight: bold;
   color: darkolivegreen;
   text-align: center;
- }
-.cardMatSubtitle {
+}
+.mat-card-subtitle {
   font-family: Verdana;
   font-size: 12px;
   font-weight: bold;
   color: darkolivegreen;
 }
 
-.cardMatHeader {
+.mat-card-header {
   text-align: center;
   margin-left: 10px;
 }
 
-.cardMatActions {
+.mat-card-actions {
   margin-left: 10px;
   margin-top: 10px;
 
@@ -88,37 +86,3 @@
   width: 100%;
 }
 
-#cartblock {
-  border: 0px solid #ccc;
-  
-}
-
-#cart {
-  position: fixed;
-  top: 380px;
-  right: 20px;
-  border: 1px solid #ccc;
-  background-color: rgb(255, 255, 102);
-  height: 335px;
-  width: 285px;
-  /*box-shadow: 3px 3px 3px #111;*/
-  box-shadow:  5px 5px 5px #1d1f20;
-              
-}
-
-#cartContent {
-  height: 285px;
-  overflow-y: scroll;
-}
-
-.smartButton {
-  display: none;
-}
-
-.grandTotal {
-  height: 50px;
-  background-color: #69854c;
-  color: #fff;
-  font-weight: bold;
-  padding: 3px;
-}

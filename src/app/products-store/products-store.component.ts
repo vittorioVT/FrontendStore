@@ -11,40 +11,36 @@ import { IAppState } from '../Interfaces/IAppState';
   styleUrls: ['./products-store.component.css']
 })
 export class ProductsStoreComponent implements OnInit {
-
-  @ViewChild(MatSort, { static: false }) sort: MatSort;
-  @ViewChild(MatPaginator, { static: false }) paginator: MatPaginator
-
+    
   datasource: ProductElements[];
   searchValue: '';
-  myCart: Array<ProductElements> = [];
-  state: IAppState;
-  total: number = 0;
-  
-  
-  //this.state = { items: null, myOrder: null, showPopup: false, userId: 0, orderPlaced: false }; 
-  constructor(private service: ProductStoreService) { }
+  public user;
+
+  constructor(private service: ProductStoreService) {
+    setTimeout(() => {
+      this.user = {
+        name: 'Viktor'
+      };
+    }, 2000);
+  }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       this.datasource = data as ProductElements[];
      })
   }
-  
-  addToCart(id)
-  {
-    const item = this.datasource[id];
-    this.myCart.push(item);
-    const myItems = this.myCart.map(function (menu){
-      this.total += menu.Price * menu.Quantity;
 
-    })
 
-    
-    
-    
-       
-  }
+
+
+  //addToCart(id)
+  //{
+  //  const item = this.datasource[id];
+  //  this.myCart.push(item);
+  //  const myItems = this.myCart.map(function (menu){
+  //    this.total += menu.Price * menu.Quantity;
+  //  })
+  // }
 
 }
 

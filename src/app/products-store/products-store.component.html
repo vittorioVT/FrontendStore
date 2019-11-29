@@ -3,6 +3,7 @@
     <mat-form-field class="search">
       <input matInput [(ngModel)]="searchValue" placeholder="Пошук товарів..." />
     </mat-form-field>
+
     <mat-paginator [length]="100" [pageSize]="12" [pageSizeOptions]="[3, 6, 12, 24, 96]">
     </mat-paginator>
   </div>
@@ -11,18 +12,18 @@
   <div *ngIf="searchValue==null; then thenBlock else elseBlock"></div>
   <ng-template #thenBlock>
     <div id="wrapper">
-      <mat-card class="cardMat" *ngFor="let items of datasource">
-        <mat-card-header class="cardMatHeader">
-          <mat-card-title class="cardMatTitle">{{items.Name}}</mat-card-title>
+      <mat-card *ngFor="let items of datasource">
+        <mat-card-header>
+          <mat-card-title>{{items.Name}}</mat-card-title>
         </mat-card-header>
-        <img mat-card-image class="cardMatImage" src="http://localhost:13764/Img/{{items.Picture}}" alt="{{items.Name}}" />
-        <mat-card-subtitle class="cardMatSubtitle">{{items.Description}}</mat-card-subtitle>
+        <img mat-card-image src="http://localhost:13764/Img/{{items.Picture}}" alt="{{items.Name}}" />
+        <mat-card-subtitle>{{items.Description}}</mat-card-subtitle>
         <mat-card-content>
           <span class="color">{{items.Color}}</span>&nbsp;<span class="size"> {{items.Size}}</span>
         </mat-card-content>
-        <mat-card-actions class="cardMatActions">
+        <mat-card-actions>
           <span class="price">{{items.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-          <button mat-button mat-raised-button (onClick)="addCard()" class="button">Купити</button>
+          <button mat-button mat-raised-button (click)="addCard()" class="button">Купити</button>
         </mat-card-actions>
       </mat-card>
     </div>
@@ -47,13 +48,11 @@
   </ng-template>
 </div>
 
-  <div id="cartblock">
-    <mat-card id="cart">
-        <div id="cartContent">
-          <div class="grandtotal cartEmpty">
-            <h1></h1>
-            <p></p>
-          </div>
-        </div>
-      </mat-card>
-  </div>
+<
+
+<div>
+  <app-cart [user]="user" >
+  </app-cart>
+</div>
+
+  

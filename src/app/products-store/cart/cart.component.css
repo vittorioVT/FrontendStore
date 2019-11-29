@@ -1,0 +1,40 @@
+
+#cartblock {
+  border: 0px solid #ccc;
+}
+
+#cart {
+  position: fixed;
+  top: 380px;
+  right: 20px;
+  border: 1px solid #ccc;
+  background-color: rgb(255, 255, 102);
+  height: 335px;
+  width: 285px;
+  /*box-shadow: 3px 3px 3px #111;*/
+  box-shadow: 5px 5px 5px #1d1f20;
+}
+
+#cartContent {
+  height: 285px;
+  overflow-y: scroll;
+}
+
+.smartButton {
+  display: none;
+}
+
+.grandTotal {
+  height: 50px;
+  background-color: #69854c;
+  color: #fff;
+  font-weight: bold;
+  padding: 3px;
+}
+.cartEmpty {
+  text-align: center;
+}
+
+.cartNotEmpty {
+  padding: 0 0 0 5px;
+}
