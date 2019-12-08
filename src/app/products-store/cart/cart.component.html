@@ -2,7 +2,13 @@
   <mat-card id="cart">
     <div id="cartContent">
       <div class="grandtotal cartEmpty">
-        <h1>{{user?.name}}</h1>
+        <!--<h1>{{myCart?.name}}</h1>-->
+        <ul *ngFor="let i of datasource">
+          <li>{{i?.Name}}</li>
+        </ul>
+        <button (click)="selectUser()">Something in component</button>
+
+
       </div>
     </div>
   </mat-card>

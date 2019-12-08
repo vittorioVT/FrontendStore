@@ -12,35 +12,39 @@ import { IAppState } from '../Interfaces/IAppState';
 })
 export class ProductsStoreComponent implements OnInit {
     
-  datasource: ProductElements[];
+  public datasource: ProductElements[];
   searchValue: '';
-  public user;
+  public isShown = false;
+  public selectUser;
+  public myCart: ProductElements[];
+  public total: number = 0;
 
-  constructor(private service: ProductStoreService) {
-    setTimeout(() => {
-      this.user = {
-        name: 'Viktor'
-      };
-    }, 2000);
-  }
+
+  constructor(private service: ProductStoreService) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       this.datasource = data as ProductElements[];
+      
      })
   }
 
-
-
-
-  //addToCart(id)
-  //{
-  //  const item = this.datasource[id];
+    
+  addToCart(id)
+  {
+    this.isShown = true;
+  //  const item = this.datasource[1];
+  //  const name = item.Name;
+  //  const price = item.Price;
+  //  console.log(id, name, price);
   //  this.myCart.push(item);
-  //  const myItems = this.myCart.map(function (menu){
-  //    this.total += menu.Price * menu.Quantity;
-  //  })
-  // }
+    
+  //  //const myItems = this.myCart.map(function (menu) {
+  //  //  this.total += menu.Price * menu.Quantity;
+
+  //  //}, this);
+
+   }
 
 }
 

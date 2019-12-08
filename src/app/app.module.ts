@@ -12,6 +12,7 @@ import { ProductStoreService } from './product-store.service';
 import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthFrontService } from './auth-front.service';
+import { CartService } from './cart.service';
 
 //material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -84,7 +85,7 @@ import { CartComponent } from './products-store/cart/cart.component';
     MatCardModule
   ],
 
-  providers: [ProductStoreService, AuthFrontService],
+  providers: [ProductStoreService, AuthFrontService, CartService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
