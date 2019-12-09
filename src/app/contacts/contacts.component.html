@@ -1,7 +1,13 @@
 <p>Тут будуть контакти власників сайту, магазину, або будь-яка інша необхідна інформація</p>
 <ul>
   <li *ngFor="let cart of carts">
-    {{cart.name}}
+    {{cart.Name}}
+    <button class="cart" (click)="addCart(cart.Name)">Добавить</button>
   </li>
+</ul>
 
+<ul>
+  <li *ngFor="let c of newCarts">
+    {{c.name}}
+  </li>
 </ul>

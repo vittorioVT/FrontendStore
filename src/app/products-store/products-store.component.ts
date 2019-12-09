@@ -20,6 +20,7 @@ export class ProductsStoreComponent implements OnInit {
   public total: number = 0;
 
 
+
   constructor(private service: ProductStoreService) { }
 
   ngOnInit() {
@@ -28,23 +29,23 @@ export class ProductsStoreComponent implements OnInit {
       
      })
   }
-
+      
+  //addToCart(id)
+  //{
+  //  this.isShown = true;
+  // // const item = this.datasource[1];
     
-  addToCart(id)
-  {
-    this.isShown = true;
-  //  const item = this.datasource[1];
-  //  const name = item.Name;
-  //  const price = item.Price;
-  //  console.log(id, name, price);
-  //  this.myCart.push(item);
+  ////  const name = item.Name;
+  ////  const price = item.Price;
+  ////  console.log(id, name, price);
+  ////  this.myCart.push(item);
     
-  //  //const myItems = this.myCart.map(function (menu) {
-  //  //  this.total += menu.Price * menu.Quantity;
-
-  //  //}, this);
-
-   }
+  //const myItems = this.myCart.map(function (menu) {
+  //  this.total += menu.Price * menu.Quantity;
+  //  this.color = menu.Color;
+  //}, this);
+  //  console.log(this.total);
+  // }
 
 }
 

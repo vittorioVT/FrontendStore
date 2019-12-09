@@ -51,7 +51,7 @@
 
 
 <div>
-  <app-cart *ngIf="isShown" [myCart]="myCart" (userSelected)="selectUser=user" [datasource]="datasource">
+  <app-cart *ngIf="isShown" [myCart]="myCart" [myItems]="myItems" (userSelected)="selectUser=user" [datasource]="datasource">
   </app-cart>
 </div>
 

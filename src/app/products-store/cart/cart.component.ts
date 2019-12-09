@@ -12,6 +12,7 @@ export class CartComponent implements OnInit {
   //@Input() user;
   @Input() datasource;
   @Input() myCart: ProductElements[];
+  @Input() myItems;
 
   //создаем свое событие
   @Output() userSelected: EventEmitter<any> = new EventEmitter();
@@ -20,7 +21,8 @@ export class CartComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    
+    console.log(this.datasource);
+  
   }    
 
   selectUser() {
