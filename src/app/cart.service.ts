@@ -33,6 +33,8 @@ export class CartService {
   public add(name: string) {
     this.newCarts.push({ name });
     console.log(this.newCarts);
+    return this.newCarts;
+    
   }
 
 }

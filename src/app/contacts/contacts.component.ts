@@ -11,7 +11,7 @@ import { ProductElements } from '../Interfaces/productElements';
 export class ContactsComponent implements OnInit {
 
   public carts;
-  public newCarts;
+  private newCarts = [];
   constructor(private _cartService: CartService) { }
   
 
@@ -30,11 +30,14 @@ export class ContactsComponent implements OnInit {
       return;
     }
     this._cartService.add(name);
-    this.newCarts = this._cartService.getAll();
+    this.newCarts = this._cartService.newCarts;
     console.log(this.newCarts);
-    //return this.newCarts;
+    //this.newCarts = this._cartService.getAll().subscribe((newCarts) => { this.newCarts = newCarts });
+   // console.log(this.newCarts);
+    
     
     //this._cartService.add(name);
+
     //this.carts = this._cartService.getAll();
   }
 
