@@ -7,11 +7,6 @@ import { ProductElements } from './Interfaces/productElements';
 })
 export class CartService {
 
-  //private carts = [
-  //  { name: 'Johne' },
-  //  { name: 'Bob' },
-  //  { name: 'Alice' }
-  //];
   private carts = [];
   public newCarts = [];
   public newCarts2 = [];
@@ -30,8 +25,8 @@ export class CartService {
     return this.carts = this.carts.filter(user => user.name !== name);
   }
 
-  public add(name: string, color: string, price: number) {
-    this.newCarts.push({ name, color, price});
+  public add(name: string, picture: string, price: number) {
+    this.newCarts.push({ name, picture, price});
     console.log(this.newCarts);
     return this.newCarts;
     

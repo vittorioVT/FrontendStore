@@ -2,15 +2,17 @@
 <ul>
   <li *ngFor="let cart of carts">
     {{cart.Id}} - {{cart.Name}} - {{cart.Size}} - {{cart.Color}} - {{cart.Price}} грн. - {{cart.Quantity}}
-
-    <!--<button class="cart" (click)="addCart(cart.Name, cart.Color, cart.Price)">Добавить</button>-->
-    <button class="cart" (click)="addCart2(cart)">Добавить</button>
+    <!--<button class="cart" (click)="addCart2(cart)">Добавить</button>-->
+    <button class="cart" (click)="addCart(cart.Name, cart.Picture, cart.Price, count);addQuantity(count);">Добавить</button>
   </li>
+  
 </ul>
+
 
 <ul>
-  <li *ngFor="let c of newCarts2">
-     {{c.Name}} грн.     
-    Всього одиниць товару - {{newCarts2.length}}
+  <li *ngFor="let c of newCarts">
+    {{c.name}} - {{c.picture}} - {{c.price}} грн. and {{count}}
+
   </li>
 </ul>
+Всього одиниць товару - {{newCarts.length}};

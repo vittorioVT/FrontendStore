@@ -9,10 +9,11 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-  //@Input() user;
+  
   @Input() datasource;
   @Input() myCart: ProductElements[];
   @Input() myItems;
+  @Input() newCarts;
 
   //создаем свое событие
   @Output() userSelected: EventEmitter<any> = new EventEmitter();
@@ -21,8 +22,7 @@ export class CartComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.datasource);
-  
+    
   }    
 
   selectUser() {

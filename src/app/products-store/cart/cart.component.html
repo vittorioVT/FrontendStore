@@ -2,13 +2,20 @@
   <mat-card id="cart">
     <div id="cartContent">
       <div class="grandtotal cartEmpty">
-        <!--<h1>{{myCart?.name}}</h1>-->
-        <ul *ngFor="let i of datasource">
-          <li>{{i?.Name}}</li>
+        <ul *ngFor="let c of newCarts" >
+          <li>
+            <div class="product">
+             <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
+              - {{c?.name}}<br/>
+              {{c?.price}} грн.
+
+            </div>
+            
+
+
+          </li>
+
         </ul>
-        <button (click)="selectUser()">Something in component</button>
-
-
       </div>
     </div>
   </mat-card>

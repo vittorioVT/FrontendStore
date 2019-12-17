@@ -14,11 +14,11 @@ export class ProductsStoreComponent implements OnInit {
     
   public datasource: ProductElements[];
   searchValue: '';
-  public isShown = false;
+  public isShown = true;
   public selectUser;
   public myCart: ProductElements[];
   public total: number = 0;
-
+  public newCarts = [];
 
 
   constructor(private service: ProductStoreService) { }
@@ -29,7 +29,23 @@ export class ProductsStoreComponent implements OnInit {
       
      })
   }
-      
+
+  addCart(name: string, picture: string, price: number) {
+    if (!name) {
+      return;
+    }
+    this.service.add(name, picture, price);
+    this.newCarts = this.service.newCarts;
+    this.total = +1;
+    console.log(this.newCarts);
+  }
+
+  addQuantity() {
+    return this.total = +1;
+  }
+
+
+
   //addToCart(id)
   //{
   //  this.isShown = true;

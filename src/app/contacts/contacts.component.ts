@@ -13,7 +13,6 @@ export class ContactsComponent implements OnInit {
   public carts;
   private newCarts = [];
   private newCarts2 = [];
-  private newCarts3 = [];
   constructor(private _cartService: CartService) { }
   
 
@@ -27,39 +26,32 @@ export class ContactsComponent implements OnInit {
   //  this.carts = this._cartService.getAll();
   //}
 
-  addCart(name: string, color: string, price: number) {
+  addCart(name: string, picture: string, price: number, count: number = 0) {
     if (!name) {
       return;
     }
-    this._cartService.add(name, color, price);
+    this._cartService.add(name, picture, price);
     this.newCarts = this._cartService.newCarts;
+    count = +1;
     console.log(this.newCarts);
   }
-
+  
   addCart2(allCarts: ProductElements) {
     this.newCarts2 = this._cartService.add2(allCarts);
-    console.log(this.newCarts2);
-    this.newCarts2.forEach((cart: any, index: number, pArr: any) => {
-      console.log(cart);
-      console.log(index);
-      console.log(pArr);
-    });
-
+    
+    const result = this.newCarts2.map(
+      menu => {
+        menu.name = allCarts.Name;
+        menu.price = allCarts.Price;
+        menu.img = allCarts.Picture;
+        return menu;
+      });
+        //menu.count = allCarts.Price * allCarts.Quantity;
+      console.log(result);
   }
 
-  //carts and forEach();
-  
-
-
-
-  //newCarts2 and forEach();
-
-
-
-
-
   addQuantity(count) {
-    return this.count=count++;
+    return this.count=+1;
   }
 
 
