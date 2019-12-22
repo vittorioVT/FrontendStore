@@ -1,22 +1,26 @@
 <div id="cartblock">
   <mat-card id="cart">
     <div id="cartContent">
-      <div class="grandtotal cartEmpty">
-        <ul *ngFor="let c of newCarts" >
-          <li>
-            <div class="product">
-             <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
-              - {{c?.name}}<br/>
-              {{c?.price}} грн.
+      <ul *ngFor="let c of newCarts">
+        <li>
+          <div class="product">
+            <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
+            {{c?.name}}<br />Ціна - {{c?.price}} грн.<br />
+            Кількість - ....<br/>
+            | <span class="remove" (click)="remove()">remove</span>
+          </div>
 
-            </div>
-            
+        </li>
+        <hr />
+      </ul>
+    </div>
+    <div *ngIf="isOrderContent" class="orderContent">
+      
+      Загальна кількість: {{total}}
+      <br/>
+      <button mat-flat-button button class="continue" (click)="continue()">Далі</button>
+      Загальна сумма: {{total}}<br />
 
-
-          </li>
-
-        </ul>
-      </div>
     </div>
   </mat-card>
 </div>

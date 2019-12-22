@@ -10,11 +10,13 @@ import { EventEmitter } from '@angular/core';
 })
 export class CartComponent implements OnInit {
   
+  @Input() isOrderContent; 
   @Input() datasource;
   @Input() myCart: ProductElements[];
   @Input() myItems;
   @Input() newCarts;
-
+  @Input() total;
+  
   //создаем свое событие
   @Output() userSelected: EventEmitter<any> = new EventEmitter();
 

@@ -12,6 +12,7 @@ import { IAppState } from '../Interfaces/IAppState';
 })
 export class ProductsStoreComponent implements OnInit {
     
+  public isOrderContent = false;
   public datasource: ProductElements[];
   searchValue: '';
   public isShown = true;
@@ -36,7 +37,8 @@ export class ProductsStoreComponent implements OnInit {
     }
     this.service.add(name, picture, price);
     this.newCarts = this.service.newCarts;
-    this.total = +1;
+    this.total += 1;
+    this.isOrderContent = true;
     console.log(this.newCarts);
   }
 
