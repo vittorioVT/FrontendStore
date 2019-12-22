@@ -20,6 +20,7 @@ export class ProductsStoreComponent implements OnInit {
   public myCart: ProductElements[];
   public total: number = 0;
   public newCarts = [];
+  public sum: number = 0;
 
 
   constructor(private service: ProductStoreService) { }
@@ -38,6 +39,7 @@ export class ProductsStoreComponent implements OnInit {
     this.service.add(name, picture, price);
     this.newCarts = this.service.newCarts;
     this.total += 1;
+    this.sum += price;
     this.isOrderContent = true;
     console.log(this.newCarts);
   }

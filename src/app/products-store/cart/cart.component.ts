@@ -16,6 +16,7 @@ export class CartComponent implements OnInit {
   @Input() myItems;
   @Input() newCarts;
   @Input() total;
+  @Input() sum;
   
   //создаем свое событие
   @Output() userSelected: EventEmitter<any> = new EventEmitter();
