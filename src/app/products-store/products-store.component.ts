@@ -21,6 +21,10 @@ export class ProductsStoreComponent implements OnInit {
   public total: number = 0;
   public newCarts = [];
   public sum: number = 0;
+  public count: number = 1;
+  public idCountArray: number[] = [1];
+  public idCount: number = 0;
+  
 
 
   constructor(private service: ProductStoreService) { }
@@ -28,7 +32,7 @@ export class ProductsStoreComponent implements OnInit {
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       this.datasource = data as ProductElements[];
-      
+    
      })
   }
 
@@ -36,14 +40,25 @@ export class ProductsStoreComponent implements OnInit {
     if (!name) {
       return;
     }
-    this.service.add(id, name, picture, price);
-    this.newCarts = this.service.newCarts;
+
+    if (!this.idCountArray.includes(id)) {
+      this.count;
+      this.service.add(id, name, picture, price);
+      this.newCarts = this.service.newCarts;
+    }
+    else {
+       this.count += 1;
+    }
+
+    this.idCountArray.push(id);
+        
     this.total += 1;
     this.sum += price;
     this.isOrderContent = true;
-    console.log(this.newCarts);
-   
+
   }
+
+
 
   addQuantity() {
     return this.total = +1;

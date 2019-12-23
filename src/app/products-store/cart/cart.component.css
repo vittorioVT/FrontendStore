@@ -43,17 +43,23 @@
   padding-top: 10px;
   padding-right: 5px;
 }
+.emptyCart {
+  text-align: center;
+  height: 50px;
+  background-color: rgb(105, 133, 76);
+  color: #fff;
+  font-family: Verdana;
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-top: 20px;
+  padding-right: 5px;
+}
 
 .grandtotal ul {
   list-style: none;
 } 
-.cartEmpty {
-  /*text-align: center;*/
-}
 
-.cartNotEmpty {
-  padding: 0 0 0 0px;
-}
 .product {
   height: 90px;
   margin-left: 0px;
@@ -72,8 +78,6 @@
   float: left;
   margin-left: 10px;
   margin-right: 10px;
- 
-
 }
 
 .continue {

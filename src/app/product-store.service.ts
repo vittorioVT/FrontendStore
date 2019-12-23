@@ -17,7 +17,6 @@ export class ProductStoreService {
 
   public add(id: number, name: string, picture: string, price: number) {
     this.newCarts.push({id, name, picture, price });
-  //  console.log(this.newCarts);
     return this.newCarts;
 
   }
