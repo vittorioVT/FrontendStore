@@ -32,16 +32,17 @@ export class ProductsStoreComponent implements OnInit {
      })
   }
 
-  addCart(name: string, picture: string, price: number) {
+  addCart(id: number, name: string, picture: string, price: number) {
     if (!name) {
       return;
     }
-    this.service.add(name, picture, price);
+    this.service.add(id, name, picture, price);
     this.newCarts = this.service.newCarts;
     this.total += 1;
     this.sum += price;
     this.isOrderContent = true;
     console.log(this.newCarts);
+   
   }
 
   addQuantity() {

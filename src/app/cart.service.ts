@@ -25,8 +25,8 @@ export class CartService {
     return this.carts = this.carts.filter(user => user.name !== name);
   }
 
-  public add(name: string, picture: string, price: number) {
-    this.newCarts.push({ name, picture, price});
+  public add(id: number, name: string, picture: string, price: number) {
+    this.newCarts.push({id, name, picture, price});
     console.log(this.newCarts);
     return this.newCarts;
     

@@ -17,6 +17,7 @@ export class CartComponent implements OnInit {
   @Input() newCarts;
   @Input() total;
   @Input() sum;
+  public count: number = 1;
   
   //создаем свое событие
   @Output() userSelected: EventEmitter<any> = new EventEmitter();
@@ -27,6 +28,15 @@ export class CartComponent implements OnInit {
   ngOnInit() {
     
   }    
+
+  removeFromCart(id: number) {
+    this.newCarts = this.newCarts.splice(id, 1);
+    this.total -= 1;
+    //this.sum -= this.datasource.price;
+    return this.newCarts;
+
+    console.log(this.newCarts);
+  }
 
   selectUser() {
     this.userSelected.emit();

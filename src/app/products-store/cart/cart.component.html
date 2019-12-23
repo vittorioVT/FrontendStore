@@ -6,8 +6,11 @@
           <div class="product">
             <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
             {{c?.name}}<br />Ціна - {{c?.price}} грн.<br />
-            Кількість - ....<br/>
-            | <span class="remove" (click)="remove()">remove</span>
+              <span *ngIf="" >
+              Кількість - {{count}}<br />
+              </span>
+            
+            | <span class="remove" (click)="removeFromCart(c?.id)">remove</span>
           </div>
 
         </li>
@@ -16,10 +19,9 @@
     </div>
     <div *ngIf="isOrderContent" class="orderContent">
       
-      Загальна кількість: {{total}}
-      <br/>
+      Загальна кількість: {{total}} шт.<br/>
       <button mat-flat-button button class="continue" (click)="continue()">Далі</button>
-      Загальна сумма: {{sum}}<br />
+      Заг. сумма: {{sum}} грн.<br />
 
     </div>
   </mat-card>
