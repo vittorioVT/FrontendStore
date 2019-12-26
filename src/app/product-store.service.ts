@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class ProductStoreService {
 
   public newCarts = [];
+  public cartsCount = [];
   baseUrl: string ='http://localhost:13764/api/products'
 
   constructor(private http: HttpClient) { }

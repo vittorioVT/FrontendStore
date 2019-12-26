@@ -16,17 +16,16 @@ export class ProductsStoreComponent implements OnInit {
   public datasource: ProductElements[];
   searchValue: '';
   public isShown = true;
-  public selectUser;
-  public myCart: ProductElements[];
   public total: number = 0;
   public newCarts = [];
   public sum: number = 0;
   public count: number = 1;
+  public count2: number = 1;
+  public countResult: number = 1;
   public idCountArray: number[] = [1];
-  public idCount: number = 0;
-  
-
-
+  public idCountArray2 = [];
+   
+    
   constructor(private service: ProductStoreService) { }
 
   ngOnInit() {
@@ -35,53 +34,41 @@ export class ProductsStoreComponent implements OnInit {
     
      })
   }
-
+  
   addCart(id: number, name: string, picture: string, price: number) {
-    if (!name) {
-      return;
-    }
 
-    if (!this.idCountArray.includes(id)) {
-      this.count;
-      this.service.add(id, name, picture, price);
-      this.newCarts = this.service.newCarts;
-    }
-    else {
-       this.count += 1;
-    }
-
-    this.idCountArray.push(id);
-        
+    const countId = 1;  
+    this.idCountArray2.push({ id, countId });
+    console.log(this.idCountArray2); 
     this.total += 1;
     this.sum += price;
     this.isOrderContent = true;
+            
+    if (!id) {
+      return;
+    }
+    //в этом месте нужно написать функцию, которая будет в качестве аргумента принимать
+    // id, и возвращать значение переменной - count - для выведения в cart.html
+     //if (!this.idCountArray.includes(id)) {
+        this.count = 1;
+        this.service.add(id, name, picture, price);
+        this.newCarts = this.service.newCarts;
+    console.log(this.newCarts);  
+       // this.countResult = this.count;
+           
+     // }
+      //else {
+      //  if (this.idCountArray2[this.idCountArray.length - 1].id == id) {
+      //    this.count2 = this.idCountArray2[this.idCountArray.length - 1].countId += 1;
+      //  }
+      //  if (this.idCountArray2[this.idCountArray.length - 1].id != id) {
+      //    this.count2 = this.idCountArray2[this.idCountArray.length - 1].countId;
+      //  } else
+      //    return;
+      //}
 
+    // добавляем id в первый массив
+    this.idCountArray.push(id);
   }
-
-
-
-  addQuantity() {
-    return this.total = +1;
-  }
-
-
-
-  //addToCart(id)
-  //{
-  //  this.isShown = true;
-  // // const item = this.datasource[1];
-    
-  ////  const name = item.Name;
-  ////  const price = item.Price;
-  ////  console.log(id, name, price);
-  ////  this.myCart.push(item);
-    
-  //const myItems = this.myCart.map(function (menu) {
-  //  this.total += menu.Price * menu.Quantity;
-  //  this.color = menu.Color;
-  //}, this);
-  //  console.log(this.total);
-  // }
-
 }
 

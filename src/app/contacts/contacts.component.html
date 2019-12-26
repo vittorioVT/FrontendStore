@@ -3,7 +3,7 @@
   <li *ngFor="let cart of carts">
     {{cart.Id}} - {{cart.Name}} - {{cart.Size}} - {{cart.Color}} - {{cart.Price}} грн. - {{cart.Quantity}}
     <!--<button class="cart" (click)="addCart2(cart)">Добавить</button>-->
-    <button class="cart" (click)="addCart(cart.Name, cart.Picture, cart.Price, count);addQuantity(count);">Добавить</button>
+    <button class="cart" (click)="addCart3(cart.Id, cart.Name, cart.Picture, cart.Price, count);addQuantity(count);">Добавить</button>
   </li>
   
 </ul>

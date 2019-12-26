@@ -26,11 +26,11 @@ export class ContactsComponent implements OnInit {
   //  this.carts = this._cartService.getAll();
   //}
 
-  addCart(name: string, picture: string, price: number, count: number = 0) {
+  addCart3(id: number, name: string, picture: string, price: number, count: number = 0) {
     if (!name) {
       return;
     }
-    this._cartService.add(name, picture, price);
+    this._cartService.add(id, name, picture, price);
     this.newCarts = this._cartService.newCarts;
     count = +1;
     console.log(this.newCarts);
@@ -45,7 +45,7 @@ export class ContactsComponent implements OnInit {
         menu.price = allCarts.Price;
         menu.img = allCarts.Picture;
         return menu;
-      });
+      }, this);
         //menu.count = allCarts.Price * allCarts.Quantity;
       console.log(result);
   }

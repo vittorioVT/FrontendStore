@@ -2,16 +2,17 @@
   <mat-card id="cart">
     <div id="cartContent">
       <ul *ngFor="let c of newCarts">
-         <li>
-              <div class="product">
-                <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
-                {{c?.name}}<br />
-                Кількість - {{count}}<br />
-                Ціна - {{c?.price}} грн.<br />
-                | <span class="remove" (click)="removeFromCart(c?.id)">remove</span>
-              </div>
-         </li>
-       <hr />
+        <li>
+          <div class="product">
+            <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
+            {{c?.name}}<br />
+            Кількість - {{count}}<br />
+            Ціна - {{c?.price}} грн.<br />
+            | <span class="remove" (click)="removeFromCart(c?.id)">remove</span>
+          </div>
+          <hr />
+        </li>
+       
       </ul>
     </div>
     <div *ngIf="isOrderContent" class="orderContent">

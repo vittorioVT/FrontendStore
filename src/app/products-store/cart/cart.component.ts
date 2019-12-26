@@ -12,12 +12,15 @@ export class CartComponent implements OnInit {
   
   @Input() isOrderContent; 
   @Input() datasource;
-  @Input() myCart: ProductElements[];
   @Input() myItems;
   @Input() newCarts;
   @Input() total;
   @Input() sum;
   @Input() count;
+  //@Input() count2;
+  //@Input() idCountArray;
+  //@Input() idCountArray2;
+  
   
   
   
