@@ -16,8 +16,9 @@ export class ProductStoreService {
     return this.http.get(this.baseUrl);
   }
 
-  public add(id: number, name: string, picture: string, price: number) {
-    this.newCarts.push({id, name, picture, price });
+  public add(id: number, name: string, picture: string, price: number, quantity: number) {
+    
+    this.newCarts.push({id, name, picture, price, quantity});
     return this.newCarts;
 
   }

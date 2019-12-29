@@ -16,11 +16,8 @@ export class CartComponent implements OnInit {
   @Input() newCarts;
   @Input() total;
   @Input() sum;
-  @Input() count;
-  //@Input() count2;
-  //@Input() idCountArray;
-  //@Input() idCountArray2;
-  
+ // @Input() count;
+  @Input() quantity;
   
   
   

@@ -6,8 +6,8 @@
           <div class="product">
             <img class="img" src="http://localhost:13764/Img/{{c?.picture}}" />
             {{c?.name}}<br />
-            Кількість - {{count}}<br />
-            Ціна - {{c?.price}} грн.<br />
+            Кількість - {{c?.quantity}}<br />
+            Ціна - {{c?.price * c?.quantity}} грн.<br />
             | <span class="remove" (click)="removeFromCart(c?.id)">remove</span>
           </div>
           <hr />
