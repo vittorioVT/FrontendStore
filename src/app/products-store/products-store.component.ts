@@ -18,6 +18,8 @@ export class ProductsStoreComponent implements OnInit {
   public isShown = true;
   public total: number = 0;
   public newCarts = [];
+  public newCarts1 = [];
+  public a = [];
   public sum: number = 0;
   public count: number = 0;
   //public countId: number = 1;
@@ -30,8 +32,7 @@ export class ProductsStoreComponent implements OnInit {
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       this.datasource = data as ProductElements[];
-    
-     })
+    })
   }
   
   addCart(id: number, name: string, picture: string, price: number, quantity: number) {
@@ -41,20 +42,41 @@ export class ProductsStoreComponent implements OnInit {
     this.isOrderContent = true;
 
     this.service.add(id, name, picture, price, quantity);
-
     this.service.newCarts;
     this.newCarts = this.service.newCarts;
-
-    // тут нужно написать функцию, которая будет удалять объекты с одинаковыми id
-    // this.newCarts.map();
-
-
     console.log(this.newCarts);
 
-    //console.log(this.newCarts[0].id);
-
-
+    this.newCarts1 = this.returnNewArray(this.newCarts);
+             
   }
+
+  returnNewArray(arr: any) {
+    let id = 0;
+    let quant = 0;
+    let index1 = 0;
+    let index2 = 0;    
+
+    if (arr.length > 1) {
+
+      if (arr[arr.length - 1].quantity > 1) {
+        quant = arr[arr.length - 1].quantity;
+        id = arr[arr.length - 1].id;
+        index2 = arr.length - 1;
+        index1 = arr.length - 2;
+      }
+
+      if (arr[arr.length - 1].quantity === 1) {
+        index1 = arr.length - 1;
+      }
+
+      if (index2 != 0) {
+        arr.splice(index1, 1);
+      }        
+    }
+    return arr;
+
+  };
+  
   
   returnCount(id: number) {
     let countId: number = 1;
@@ -63,7 +85,7 @@ export class ProductsStoreComponent implements OnInit {
       this.count = countId;
       this.idCountArray2.push({ id, countId });
       this.idCountArray.push(id);
-
+      
     } else {
       for (let i of this.idCountArray2)
       {
@@ -72,8 +94,10 @@ export class ProductsStoreComponent implements OnInit {
           this.count = i.countId;
         }
       }
+      
     }
     return this.count;
   }
+
 }
 

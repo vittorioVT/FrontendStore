@@ -1,0 +1,10 @@
+.button {
+  background-color: rgb(105, 133, 76);
+  color: white;
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: left;
+  cursor: pointer;
+  margin: 10px;
+}
