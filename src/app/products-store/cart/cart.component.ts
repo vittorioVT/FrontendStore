@@ -17,9 +17,8 @@ export class CartComponent implements OnInit {
   @Input() newCarts1;
   @Input() total;
   @Input() sum;
- // @Input() count;
   @Input() quantity;
-  
+  public itemsFromCart = [];
   
   
   //создаем свое событие
@@ -37,14 +36,25 @@ export class CartComponent implements OnInit {
   }
 
   removeFromCart(id: number) {
-    this.newCarts = this.newCarts.splice(id, 1);
-    console.log(this.newCarts);
-    this.total -= 1;
-    this.sum -= this.datasource.price;
-    
-    return this.newCarts;
+    let result = [];
+    for (let i of this.newCarts1) {
+      if (i.id === id && i.quantity > 1) { 
+        i.quantity -= 1;
+      this.total -= 1;
+      this.sum -= i.price;
+      
+      } else
+        if (i.id === id && i.quantity === 1) {
+          console.log(i);
+          this.newCarts1 = this.newCarts1.filter(item => item.id !== id);
+          this.total -= 1;
+          this.sum -= i.price;
+         // return this.newCarts1;
+        }
+    } 
+       console.log(this.newCarts1);
+    return this.newCarts1;
 
-   
   }
 
   selectUser() {

@@ -19,11 +19,8 @@ export class ProductsStoreComponent implements OnInit {
   public total: number = 0;
   public newCarts = [];
   public newCarts1 = [];
-  public a = [];
   public sum: number = 0;
   public count: number = 0;
-  //public countId: number = 1;
- // public countResult: number = 1;
   public idCountArray: number[] = [1];
   public idCountArray2 = [];
     
@@ -44,10 +41,10 @@ export class ProductsStoreComponent implements OnInit {
     this.service.add(id, name, picture, price, quantity);
     this.service.newCarts;
     this.newCarts = this.service.newCarts;
-    console.log(this.newCarts);
+   // console.log(this.newCarts);
 
     this.newCarts1 = this.returnNewArray(this.newCarts);
-             
+    console.log(this.newCarts1);
   }
 
   returnNewArray(arr: any) {
@@ -73,6 +70,7 @@ export class ProductsStoreComponent implements OnInit {
         arr.splice(index1, 1);
       }        
     }
+   // console.log(arr);
     return arr;
 
   };
