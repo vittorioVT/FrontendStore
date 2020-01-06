@@ -23,59 +23,79 @@ export class ProductsStoreComponent implements OnInit {
   public count: number = 0;
   public idCountArray: number[] = [1];
   public idCountArray2 = [];
-    
+  public id = 1;
+   
+  public itemsFromCart = [];
+  
+
   constructor(private service: ProductStoreService) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       this.datasource = data as ProductElements[];
+      
     })
   }
   
-  addCart(id: number, name: string, picture: string, price: number, quantity: number) {
+  
+
+  addCart(id: number, name: string, picture: string, price: number, quantity: number = 0) {
     quantity = this.returnCount(id);
     this.total += 1;
     this.sum += price;
     this.isOrderContent = true;
 
+   // console.log(this.itemsFromCart);
+
     this.service.add(id, name, picture, price, quantity);
     this.service.newCarts;
     this.newCarts = this.service.newCarts;
-   // console.log(this.newCarts);
-
+    
     this.newCarts1 = this.returnNewArray(this.newCarts);
+    
     console.log(this.newCarts1);
+    return this.newCarts1;   
+        
   }
-
+  
+  //массив, групирующий товары по id, и выводит в корзину не каждый товар
+  // по отдельности, а групами(id, quant)
   returnNewArray(arr: any) {
-    let id = 0;
+    
     let quant = 0;
     let index1 = 0;
     let index2 = 0;    
 
     if (arr.length > 1) {
-
+      console.log(arr);
       if (arr[arr.length - 1].quantity > 1) {
         quant = arr[arr.length - 1].quantity;
-        id = arr[arr.length - 1].id;
+       // id = arr[arr.length - 1].id;
+        
+        console.log(arr.length-1);
         index2 = arr.length - 1;
         index1 = arr.length - 2;
       }
+      console.log(quant, this.id, index2, index1);
 
       if (arr[arr.length - 1].quantity === 1) {
         index1 = arr.length - 1;
       }
 
-      if (index2 != 0) {
+      if (index2 != 0 && this.id === arr[arr.length - 1].id) {
         arr.splice(index1, 1);
+        console.log(arr);
       }        
+
     }
-   // console.log(arr);
+    this.id = arr[arr.length - 1].id; 
+    console.log(this.id);
+    console.log(arr);
     return arr;
 
   };
   
-  
+  // массив, который возвращает кол-во товаров по id 
   returnCount(id: number) {
     let countId: number = 1;
 
@@ -97,5 +117,12 @@ export class ProductsStoreComponent implements OnInit {
     return this.count;
   }
 
+  itemsRemoved() {
+    console.log(this.itemsFromCart);
+    console.log(this.newCarts1);
+    return this.newCarts1;
+  }
+
+  
 }
 

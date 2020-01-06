@@ -18,50 +18,60 @@ export class CartComponent implements OnInit {
   @Input() total;
   @Input() sum;
   @Input() quantity;
+
   public itemsFromCart = [];
-  
+    
   
   //создаем свое событие
-  @Output() userSelected: EventEmitter<any> = new EventEmitter();
 
+ @Output() clickRemove: EventEmitter<any> = new EventEmitter();
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit() {
+
+  }
+
+  removeFromCart2() {
     
+   // this.clickRemove.emit(this.itemsFromCart);
+    //this.clickRemove.emit();
   }
 
-  remove(id: number) {
-    return this.newCarts = this.newCarts.filter(c => c.id != id);
-  }
-
+  //удаляем товары из корзины
   removeFromCart(id: number) {
-    let result = [];
+    
+    if (this.newCarts1.length > 0) {
     for (let i of this.newCarts1) {
       if (i.id === id && i.quantity > 1) { 
         i.quantity -= 1;
       this.total -= 1;
-      this.sum -= i.price;
-      
+        this.sum -= i.price;
+        this.itemsFromCart = this.newCarts1; 
       } else
         if (i.id === id && i.quantity === 1) {
           console.log(i);
           this.newCarts1 = this.newCarts1.filter(item => item.id !== id);
           this.total -= 1;
           this.sum -= i.price;
-         // return this.newCarts1;
+          this.itemsFromCart = this.newCarts1;
         }
-    } 
-       console.log(this.newCarts1);
-    return this.newCarts1;
+      }
+    }
+    if (this.newCarts1.length === 0) {
+      this.newCarts1 = [];
+      this.itemsFromCart = this.newCarts1;
+    }
+    
+    console.log(this.itemsFromCart);
+
+    //посылаем событие
+    this.clickRemove.emit(this.itemsFromCart);
+    return this.itemsFromCart;
 
   }
 
-  selectUser() {
-    this.userSelected.emit();
-  }
-
-   
 }
 
 

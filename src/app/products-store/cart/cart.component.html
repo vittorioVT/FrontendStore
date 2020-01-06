@@ -8,15 +8,14 @@
             {{c?.name}}<br />
             Кількість - {{c?.quantity}}<br />
             Ціна - {{c?.price * c?.quantity}} грн.<br />
-            | <span class="remove" (click)="removeFromCart(c?.id)">remove</span>
+            | <span class="remove" (click)="removeFromCart(c?.id);">видалити</span>
           </div>
           <hr />
         </li>
-       
       </ul>
     </div>
     <div *ngIf="isOrderContent" class="orderContent">
-      Загальна кількість: {{total}} шт.<br/>
+      Загальна кількість: {{total}} шт.<br />
       <button mat-flat-button button class="continue" (click)="continue()">Далі</button>
       Заг. сумма: {{sum}} грн.<br />
     </div>
@@ -24,6 +23,8 @@
       Ваш кошик порожній
 
     </div>
+
+    
 
 
   </mat-card>

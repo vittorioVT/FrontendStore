@@ -51,11 +51,18 @@
 
   <div>
     <app-cart *ngIf="isShown" [newCarts]="newCarts" [newCarts1]="newCarts1" [isOrderContent]="isOrderContent"
-    [total]="total" [datasource]="datasource" [sum]="sum" [quantity]="quantity">
+              [total]="total" [datasource]="datasource" [sum]="sum" [quantity]="quantity" (clickRemove)="itemsFromCart">
     </app-cart>
+   
+  </div>
+        
+  <div> Выводим имена товаров, которые остались в корзине:
+  
+    <ul *ngFor="let c of itemsFromCart">
+      <li><h4> - {{c?.name}}</h4></li>
+      </ul>
   </div>
 
-  <div><h4>Something out component - {{selectUser?.name}}</h4></div>
 </div>
 
 
