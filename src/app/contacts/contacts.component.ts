@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../cart.service';
 import { HttpClient} from '@angular/common/http';
 import { ProductElements } from '../Interfaces/productElements';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contacts',
@@ -14,11 +15,40 @@ export class ContactsComponent implements OnInit {
   private newCarts = [];
   private newCarts2 = [];
   constructor(private _cartService: CartService) { }
+  public person3 = Object.create({}, {
+    name: {
+      value: 'Victor',
+      enumerable: true,
+      writable: true,
+      configurable: true,
+    },
+    birthYear: {
+      value: 1975,
+      enumerable: true,
+    },
+    age: {
+      get() {
+        return new Date().getFullYear() - this.birthYear + " years";
+      },
+      set(value) {
+        //document.body.style.background = 'gray';
+        console.log('Set age', value);
+      }     
+    }
+  });
+
+  
   
 
   ngOnInit() {
     this._cartService.getAll().subscribe((carts) => { this.carts = carts as ProductElements });
+    for (let key in this.person3) {
+      console.log(key, this.person3[key]);   
+    }
+    console.log(this.person3.age);
+    console.log(this.person3.age = 100);
     
+
   }
 
   //removeCart(name: string) {
@@ -54,5 +84,22 @@ export class ContactsComponent implements OnInit {
     return this.count=+1;
   }
 
+  //также добавим сюда функцию, которая будет выполняться для
+  //каждого элемента иттерируемого объекта
+
+  observe2() {
+    observe('Observable', letter => console.log(letter), done => console.log('Done!'));
+  }
+
+
 
 }
+
+function observe(observable, next, done) {
+  for (let letter of observable) {
+    next(letter);
+  }
+  done();
+  
+}
+
