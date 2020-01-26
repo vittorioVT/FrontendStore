@@ -8,8 +8,9 @@
     "\\src\\app\\footer",
     "\\src\\app\\header",
     "\\src\\app\\Interfaces",
-    "\\src\\app\\products-store"
+    "\\src\\app\\products-store",
+    "\\src\\app\\products-store\\cart"
   ],
-  "SelectedNode": "\\src\\app\\contacts\\contacts.component.ts",
+  "SelectedNode": "\\src\\app\\products-store\\cart\\cart.component.ts",
   "PreviewInSolutionExplorer": false
 }
