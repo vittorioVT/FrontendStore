@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthFrontService } from '../auth-front.service';
 import { Router } from '@angular/router';
+import {MatInput} from '@angular/material';
 
 @Component({
   selector: 'app-login',

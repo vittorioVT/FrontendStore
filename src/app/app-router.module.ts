@@ -1,4 +1,5 @@
 import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
 
 //component
 import { ProductsStoreComponent } from './products-store/products-store.component';
@@ -11,7 +12,7 @@ import { AccessorsPlComponent } from './accessors-pl/accessors-pl.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
-import { NgModule } from '@angular/core';
+
 
 //route
 const routes: Routes = [

@@ -5,12 +5,12 @@
     "\\src\\app",
     "\\src\\app\\aboutus",
     "\\src\\app\\contacts",
-    "\\src\\app\\footer",
+    "\\src\\app\\dress-boy",
     "\\src\\app\\header",
-    "\\src\\app\\Interfaces",
+    "\\src\\app\\login",
     "\\src\\app\\products-store",
     "\\src\\app\\products-store\\cart"
   ],
-  "SelectedNode": "\\src\\app\\products-store\\cart\\cart.component.ts",
+  "SelectedNode": "\\src\\app\\app.module.ts",
   "PreviewInSolutionExplorer": false
 }

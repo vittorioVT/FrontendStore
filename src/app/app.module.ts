@@ -39,9 +39,6 @@ import { CartComponent } from './products-store/cart/cart.component';
 
 
 
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,9 +55,7 @@ import { CartComponent } from './products-store/cart/cart.component';
     LoginComponent,
     SearchPipe,
     CartComponent,
-    
-
-  ],
+   ],
   imports: [
     BrowserModule,
     AppRouterModule,
@@ -78,8 +73,7 @@ import { CartComponent } from './products-store/cart/cart.component';
     //forms
     ReactiveFormsModule,
     FormsModule,
-
-   ],
+  ],
 
   exports: [
     MatCardModule

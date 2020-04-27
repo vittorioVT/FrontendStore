@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { ProductElements } from 'src/app/Interfaces/productElements';
 import { EventEmitter } from '@angular/core';
-
+import { MatCard } from '@angular/material';
 
 @Component({
   selector: 'app-cart',
