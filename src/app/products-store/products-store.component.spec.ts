@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ProductStoreService } from '../product-store.service';
 import { ProductsStoreComponent } from './products-store.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { Pipe } from '@angular/core';
+import { SearchPipe } from '../search.pipe';
 
 describe('ProductsStoreComponent', () => {
   let component: ProductsStoreComponent;

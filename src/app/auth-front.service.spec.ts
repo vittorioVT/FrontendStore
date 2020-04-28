@@ -5,8 +5,8 @@ import { AuthFrontService } from './auth-front.service';
 describe('AuthFrontService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
-  xit('should be created', () => {
-    const service: AuthFrontService = TestBed.get(AuthFrontService);
+  it('should be created', () => {
+    const service: AuthFrontService = new AuthFrontService(null, null);
     expect(service).toBeTruthy();
   });
 });
