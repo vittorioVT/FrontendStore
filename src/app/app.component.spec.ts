@@ -4,9 +4,11 @@ import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+import { HeaderComponent } from './header/header.component';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
+  let app;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -19,23 +21,29 @@ describe('AppComponent', () => {
   }));
 
   beforeEach(() => {
-     fixture = TestBed.createComponent(AppComponent);
+    fixture = TestBed.createComponent(AppComponent);
+    app = fixture.debugElement.componentInstance;
   });
 
   it('should create the app', () => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'FrontendStore'`, () => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('FrontendStore');
+      expect(app.title).toEqual('FrontendStore');
   });
 
   it('should have router-outlet directive', () => {
     const de = fixture.debugElement.query(By.directive(RouterOutlet));
     expect(de).not.toBeNull();
   })
+
+  it('should have app-header directive', () => {
+    const deBug = fixture.debugElement.queryAll(By.css('app-header'));
+    console.log(deBug.length);
+    expect(deBug.length).toBeGreaterThan(0);
+
+  });
 
 
   //it('should render title', () => {
