@@ -3,6 +3,8 @@ import { ProductStoreService } from './product-store.service';
 import { HttpClient } from '@angular/common/http';
 import { ProductsStoreComponent } from './products-store/products-store.component';
 import { Observable, EMPTY } from 'rxjs';
+import { of } from 'rxjs';
+
 
 describe('ProductStoreService', () => {
   let service: ProductStoreService;
@@ -26,6 +28,13 @@ describe('ProductStoreService', () => {
     expect(spy).toHaveBeenCalled();
   });
 
-
+  it('should length after add()', () => {
+    spyOn(service, 'getAll').and.callFake(() => {
+      return of([1, 2, 3, 4, 5]);
+    });
+    //component.ngOnInit();
+    expect(service.add.length).toBe(5);
+    //console.log(service.add.length);
+  });
 
 });
