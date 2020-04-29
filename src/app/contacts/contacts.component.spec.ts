@@ -14,13 +14,13 @@ describe('ContactsComponent', () => {
   }));
 
   beforeEach(() => {
-    component = new ContactsComponent(null);
-    //fixture = TestBed.createComponent(ContactsComponent);
-    //component = fixture.componentInstance;
-    //fixture.detectChanges();
+     fixture = TestBed.createComponent(ContactsComponent);
+    component = fixture.componentInstance;
+   // fixture.detectChanges();
   });
 
   it('should create', () => {
-    expect(component).toBeTruthy();
+    
+    expect(component).toBeDefined();
   });
 });
