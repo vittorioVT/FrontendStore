@@ -4,13 +4,13 @@
     "\\src",
     "\\src\\app",
     "\\src\\app\\aboutus",
-    "\\src\\app\\accessors-pl",
-    "\\src\\app\\attributs-pl",
-    "\\src\\app\\contacts",
-    "\\src\\app\\footer",
-    "\\src\\app\\Interfaces",
-    "\\src\\app\\register"
+    "\\src\\app\\dress-boy",
+    "\\src\\app\\dress-girl",
+    "\\src\\app\\header",
+    "\\src\\app\\login",
+    "\\src\\app\\products-store",
+    "\\src\\app\\products-store\\cart"
   ],
-  "SelectedNode": "\\src\\app\\products-store\\products-store.component.spec.ts",
+  "SelectedNode": "\\src\\app\\app.component.spec.ts",
   "PreviewInSolutionExplorer": false
 }

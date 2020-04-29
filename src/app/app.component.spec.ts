@@ -42,8 +42,14 @@ describe('AppComponent', () => {
     const deBug = fixture.debugElement.queryAll(By.css('app-header'));
     console.log(deBug.length);
     expect(deBug.length).toBeGreaterThan(0);
+  });
+
+  it('should have app-footer directive', () => {
+    const deFooter = fixture.debugElement.query(By.css('app-footer'));
+    expect(deFooter).not.toBeNull();
 
   });
+
 
 
   //it('should render title', () => {
