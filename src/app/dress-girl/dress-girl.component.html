@@ -1,14 +1,5 @@
-<p>dress-girl works!</p>
-
-<!--<button mat-button mat-raised-button (click)="person.logInfo()" class="button">button2</button><br />
-<button mat-button mat-raised-button (click)="person.logInfo.bind(lena, 'Developer', '911')()" class="button">button3</button><br />
-
-<button mat-button mat-raised-button (click)="fnLenaInfoLog()" class="button">bind()</button><br />
-
-<button mat-button mat-raised-button (click)="fnLenaInfoLog1" class="button">call()</button><br />
-
-<button mat-button mat-raised-button (click)="fnApply" class="button">apply()</button><br />
-
-<button mat-button mat-raised-button (click)="" class="button">Closure</button><br />-->
-
-<button mat-button mat-raised-button (click)="comUrl('netflix')" class="button">Closure</button><br />
+<div *ngFor="let i of dressGirl">
+  <ul>
+    <li>{{i.Name}}</li>
+  </ul>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RubricService } from '../rubric.service';
+import { ProductElements } from '../Interfaces/productElements';
 
 @Component({
   selector: 'app-dress-boy',
@@ -7,15 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DressBoyComponent implements OnInit {
 
-  myColor: string;
+  dressboy: ProductElements[]; 
 
-  constructor() { }
+  constructor(private rubricService: RubricService) { }
 
   ngOnInit() {
-  }
+    this.rubricService.get().subscribe((data) => {
+      this.dressboy = data.filter(x => x.Comment.includes('dressboy'));
+    })
 
-  changeColor(color) {
-    this.myColor = color;
   }
 
 }

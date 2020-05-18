@@ -1,5 +1,6 @@
-<p class="text" [style.color]="myColor">dress-boy works!</p>
-<input type="text" (keydown.enter)="changeColor($event.target.value)" />
-<br/>
-<br />
 
+<div *ngFor="let i of dressboy">
+  <ul>
+    <li>{{i.Name}}</li>
+  </ul>
+</div>

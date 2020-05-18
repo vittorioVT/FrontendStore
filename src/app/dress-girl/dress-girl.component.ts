@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RubricService } from '../rubric.service';
+import { ProductElements } from '../Interfaces/productElements';
 
 
 @Component({
@@ -8,23 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DressGirlComponent implements OnInit {
 
-  constructor() { }
+  dressGirl: ProductElements[];
+
+  constructor(private rubricService: RubricService) { }
 
   ngOnInit() {
+    this.rubricService.get().subscribe((data) => {
+      this.dressGirl = data.filter(x => x.Comment.includes('dressgirl'));
+    })
+
   }
-
-  
-  urlGenerator(domain) {
-    return function (url) {
-      return console.log(`http://${url}.${domain}`);
-    }
-  }
-
-  comUrl = this.urlGenerator('com');
-
-
-
-
 }
 
 

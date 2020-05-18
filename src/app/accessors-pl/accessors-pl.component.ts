@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { RubricService } from '../rubric.service';
+import { ProductElements } from '../Interfaces/productElements';
 
 @Component({
   selector: 'app-accessors-pl',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AccessorsPlComponent implements OnInit {
 
-  constructor() { }
+  accessors: ProductElements[];
+
+
+  constructor(private rubricService: RubricService) { }
 
   ngOnInit() {
+    this.rubricService.get().subscribe((data) => {
+      this.accessors = data.filter(x => x.Comment.includes('accessors'));
+    })
+
   }
 
 }
