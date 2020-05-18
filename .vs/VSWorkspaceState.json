@@ -3,14 +3,11 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\aboutus",
-    "\\src\\app\\dress-boy",
-    "\\src\\app\\dress-girl",
+    "\\src\\app\\footer",
     "\\src\\app\\header",
-    "\\src\\app\\login",
     "\\src\\app\\products-store",
-    "\\src\\app\\products-store\\cart"
+    "\\src\\app\\register"
   ],
-  "SelectedNode": "\\src\\app\\app.component.spec.ts",
+  "SelectedNode": "\\src\\app\\app-router.module.ts",
   "PreviewInSolutionExplorer": false
 }
