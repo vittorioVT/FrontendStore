@@ -1,3 +1,5 @@
+import { Comment } from '@angular/compiler';
+
 export interface ProductElements {
   Id: number,
   Name: string,
@@ -6,5 +8,6 @@ export interface ProductElements {
   Color: string,
   Size: string,
   Price: number,
-  Quantity: number
+  Quantity: number,
+  Comment: string
 }

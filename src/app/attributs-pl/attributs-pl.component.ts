@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RubricService } from '../rubric.service';
+import { ProductElements } from '../Interfaces/productElements';
+
 
 @Component({
   selector: 'app-attributs-pl',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AttributsPlComponent implements OnInit {
 
-  constructor() { }
+  attribut: ProductElements[];
+
+
+  constructor(private rubricService: RubricService) { }
 
   ngOnInit() {
+    this.rubricService.get().subscribe((data) => {
+      this.attribut = data.filter(x => x.Comment.includes('attributs'));
+    })
   }
 
 }
