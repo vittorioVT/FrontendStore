@@ -1,3 +1,12 @@
+.row-hed-1 {
+  margin-right: -30px;
+  margin-left: -30px;
+}
+.row-hed-2 {
+  margin-right: -50px;
+  
+}
+
 .header {
   background-color: rgb(140, 178, 102);
   margin-bottom: 3px;
@@ -6,10 +15,10 @@
     font-family: Verdana;
     font-size: 18px;
     font-weight: bold;
-    margin-right: 10px;
     color: rgb(255, 255, 102);
     /*color: rgb(105, 133, 76);*/
   }
+  
 
     .header button {
       text-shadow: 5px 5px 5px #111;
@@ -19,7 +28,6 @@
     }
 
 .header2 {
-  display: inline-block;
   background-color: rgb(105, 133, 76);
   text-align: center;
   padding-top: 10px;
@@ -31,7 +39,6 @@
     font-size: 18px;
     font-weight: bold;
     color: white;
-    margin-right: 10px;
 
   }
 .shapca {
@@ -41,6 +48,7 @@
   width: 100%;
   justify-content: center;
   background-color: rgb(140, 178, 102);
+  
 }
 
 
