@@ -14,6 +14,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthFrontService } from './auth-front.service';
 import { CartService } from './cart.service';
 
+//ngx-bootstrap
+import { CollapseModule } from 'ngx-bootstrap/collapse';
+
 //material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
@@ -36,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { CartComponent } from './products-store/cart/cart.component';
+
 
 
 
@@ -73,6 +77,9 @@ import { CartComponent } from './products-store/cart/cart.component';
     //forms
     ReactiveFormsModule,
     FormsModule,
+
+    //ngx-bootstrap
+    CollapseModule.forRoot(),
   ],
 
   exports: [
