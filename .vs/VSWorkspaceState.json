@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\app"
+    "\\src\\app",
+    "\\src\\app\\header"
   ],
-  "SelectedNode": "\\src\\app\\accessors-pl",
+  "SelectedNode": "\\src\\app\\app-router.module.ts",
   "PreviewInSolutionExplorer": false
 }

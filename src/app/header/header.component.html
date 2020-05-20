@@ -1,31 +1,45 @@
 <div class="container-fluid">
-  <div>
-    <div class="row">
-      <mat-toolbar class="header">
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-2">
-          <button mat-button [routerLink]="['/']">ГОЛОВНА</button>
+  <div class="row navbar navbar-dark navbar-expand-lg header">
+      <span class="navbar-brand d-lg-none" id="mainlink" [routerLink]="['/']">НA ГОЛОВНУ</span>
+
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+              aria-label="Toggle navigation" id="nav-main">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-nav" id="navbar">
+
+        <div class="nav-item col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button class="nav-link" mat-button [routerLink]="['/']">ГОЛОВНА</button>
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-2">
-          <button mat-button [routerLink]="['/aboutus']">ПРО НАС</button>
+
+        <div class="nav-item col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button class="nav-link" mat-button [routerLink]="['/aboutus']">ПРО НАС</button>
         </div>
-        <div class="col-xs-2 col-sm-2 col-md-3 col-lg-2">
-          <button mat-button [routerLink]="['/contacts']">КОНТАКТИ</button>
+
+        <div class="nav-item col-xs-2 col-sm-2 col-md-3 col-lg-2">
+          <button class="nav-link" mat-button [routerLink]="['/contacts']">КОНТАКТИ</button>
         </div>
+
         <div class="col-xs-1 col-sm-1 col-lg-1"></div>
-        <!--<span style="flex: 1 1 auto"></span>-->
-        <div class="col-xs-1 col-sm-1 l-md-1 col-lg-1">
-          <button mat-button *ngIf="!auth.isAuthenticated" routerLink="/register">реєстрація</button>
+        
+        <div class="nav-item col-xs-1 col-sm-1 l-md-1 col-lg-1">
+          <button class="nav-link" mat-button *ngIf="!auth.isAuthenticated" routerLink="/register">реєстрація</button>
         </div>
-        <div class="col-xs-2 col-sm-2 col-lg-2">
-          <button mat-button *ngIf="auth.isAuthenticated">ласкаво просимо, {{auth.getUserName()}}</button>
+
+        <div class="nav-item col-xs-2 col-sm-2 col-lg-2">
+          <button class="nav-link" mat-button *ngIf="auth.isAuthenticated">ласкаво просимо, {{auth.getUserName()}}</button>
         </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button mat-button *ngIf="!auth.isAuthenticated" routerLink="/login">увійти</button>
+
+        <div class="nav-item col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <button class="nav-link" mat-button *ngIf="!auth.isAuthenticated" routerLink="/login">увійти</button>
         </div>
-        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
-          <button mat-button *ngIf="auth.isAuthenticated" (click)="auth.logout()">вийти</button>
+
+        <div class="nav-item col-xs-1 col-sm-1 col-md-1 col-lg-1">
+          <button class="nav-link" mat-button *ngIf="auth.isAuthenticated" (click)="auth.logout()">вийти</button>
         </div>
-      </mat-toolbar>
+      </div>
     </div>
 
     <div class="row row-hed-1">
@@ -36,51 +50,33 @@
       </div>
     </div>
 
-    <!--<div class="row">
-      <mat-toolbar class="header2">
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <button mat-button routerLink="/dressboy">одяг для хлопців</button>
+    <div class="row navbar navbar-dark navbar-expand-lg header2">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+              data-target="#navbar" aria-controls="navbar" aria-expanded="false"
+              aria-label="Toggle navigation" id="nav-main">
+        <span class="navbar-toggler-icon" id="spanColor"></span>
+      </button>
+
+      <div class="collapse navbar-collapse navbar-nav" id="navbar">
+
+        <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <button class="nav-link" mat-button routerLink="/dressboy">одяг для хлопців</button>
         </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <button mat-button routerLink="/dressgirl">oдяг для дівчат</button>
+        <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <button class="nav-link" mat-button routerLink="/dressgirl">oдяг для дівчат</button>
         </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <button mat-button routerLink="/accessors">пластові аксесуари</button>
+        <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <button class="nav-link" mat-button routerLink="/accessors">пластові аксесуари</button>
         </div>
-        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
-          <button mat-button routerLink="/attributs">пластові відзнаки</button>
+        <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <button class="nav-link" mat-button routerLink="/attributs">пластові відзнаки</button>
         </div>
-      </mat-toolbar>
-    </div>-->
-    <div class="row navbar navbar-expand-lg header2">
-      <!--<nav class="">-->
-        
-          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-                  data-target="#navbar" aria-controls="navbar" aria-expanded="false"
-                  aria-label="Toggle navigation">
-            <span lass="navbar-toggler-icon"></span>
-          </button>
-        
-          <div class="collapse navbar-collapse navbar-nav" id="navbar">
-            <!--<div class="navbar-nav mr-auto">-->
-            <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <button class="nav-link" mat-button routerLink="/dressboy">одяг для хлопців</button>
-            </div>
-            <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <button class="nav-link" mat-button routerLink="/dressgirl">oдяг для дівчат</button>
-            </div>
-            <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <button class="nav-link" mat-button routerLink="/accessors">пластові аксесуари</button>
-            </div>
-            <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
-              <button class="nav-link" mat-button routerLink="/attributs">пластові відзнаки</button>
-            </div>
-          </div>
-      <!--</nav>-->
+
+      </div>
+
     </div>
     
-    
-  </div>
 </div>
 
 
