@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RubricService } from '../rubric.service';
 import { ProductElements } from '../Interfaces/productElements';
+import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
 
 @Component({
   selector: 'app-dress-boy',
@@ -16,7 +17,10 @@ export class DressBoyComponent implements OnInit {
   ngOnInit() {
     this.rubricService.get().subscribe((data) => {
       this.dressboy = data.filter(x => x.Comment.includes('dressboy'));
+      console.log(this.dressboy);
     })
+
+
 
   }
 

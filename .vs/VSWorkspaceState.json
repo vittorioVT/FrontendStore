@@ -5,6 +5,6 @@
     "\\src\\app",
     "\\src\\app\\header"
   ],
-  "SelectedNode": "\\src\\app\\app-router.module.ts",
+  "SelectedNode": "\\src\\app\\header\\header.component.ts",
   "PreviewInSolutionExplorer": false
 }

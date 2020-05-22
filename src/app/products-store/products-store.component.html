@@ -27,6 +27,7 @@
         </mat-card>
       </div>
     </ng-template>
+
     <ng-template #elseBlock>
       <div id="wrapper">
         <mat-card *ngFor="let items of datasource | search: searchValue">
@@ -56,12 +57,12 @@
    
   </div>
         
-  <div> Выводим имена товаров, которые остались в корзине:
+  <!--<div> Выводим имена товаров, которые остались в корзине:
   
     <ul *ngFor="let c of itemsFromCart">
       <li><h4> - {{c?.name}}</h4></li>
       </ul>
-  </div>
+  </div>-->
 
 </div>
 
