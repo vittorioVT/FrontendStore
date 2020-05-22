@@ -3,6 +3,7 @@ import { ProductStoreService } from '../product-store.service';
 import { MatCardModule, MatCardContent, MatCard, MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { ProductElements } from '../Interfaces/productElements';
 import { IAppState } from '../Interfaces/IAppState';
+import { RubricService } from '../rubric.service';
 
 
 @Component({
@@ -12,34 +13,35 @@ import { IAppState } from '../Interfaces/IAppState';
 })
 export class ProductsStoreComponent implements OnInit {
     
-  public isOrderContent = false;
-  public datasource: ProductElements[];
+  isOrderContent = false;
+  datasource: ProductElements[];
   searchValue: '';
-  public isShown = true;
-  public total: number = 0;
-  public newCarts = [];
-  public newCarts1 = [];
-  public sum: number = 0;
-  public count: number = 0;
-  public idCountArray: number[] = [1];
-  public idCountArray2 = [];
-  public id = 1;
+  isShown = true;
+  total: number = 0;
+  newCarts = [];
+  newCarts1 = [];
+  sum: number = 0;
+  count: number = 0;
+  idCountArray: number[] = [1];
+  idCountArray2 = [];
+  id = 1;
    
   public itemsFromCart = [];
   
 
-  constructor(private service: ProductStoreService) { }
+  constructor(private service: RubricService) { }
 
   ngOnInit() {
-    this.service.getAll().subscribe((data) => {
-      this.datasource = data as ProductElements[];
-      
-    })
+    this.service.get().subscribe((data) => {
+      this.datasource = data;
+    });
+
+    //this.service.getAll().subscribe((data) => {
+    //  this.datasource = data as ProductElements[];
+   
   }
   
-  
-
-  addCart(id: number, name: string, picture: string, price: number, quantity: number = 0) {
+    addCart(id: number, name: string, picture: string, price: number, quantity: number = 0) {
     quantity = this.returnCount(id);
     this.total += 1;
     this.sum += price;

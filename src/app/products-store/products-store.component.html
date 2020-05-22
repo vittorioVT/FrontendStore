@@ -1,14 +1,20 @@
-<div>
-  <div class="navigator">
-    <mat-form-field class="search">
-      <input matInput [(ngModel)]="searchValue" placeholder="Пошук товарів..." />
-    </mat-form-field>
+<div class="container-fluid">
 
-    <mat-paginator [length]="100" [pageSize]="12" [pageSizeOptions]="[3, 6, 12, 24, 96]">
-    </mat-paginator>
+  <div class="row">
+    <div class="col-lg-5 col-xl-6">
+      <mat-form-field class="search">
+        <input matInput [(ngModel)]="searchValue" placeholder="Пошук товарів..." />
+      </mat-form-field>
+    </div>
+    <div class="d-none d-lg-block col-lg-7 col-xl-6">
+      <mat-paginator [length]="100" [pageSize]="12" [pageSizeOptions]="[3, 6, 12, 24, 96]">
+      </mat-paginator>
+    </div>
+  </div>
 
+  <div *ngIf="searchValue==null; then thenBlock else elseBlock"></div>
 
-    <div *ngIf="searchValue==null; then thenBlock else elseBlock"></div>
+  <div class="row">
     <ng-template #thenBlock>
       <div id="wrapper">
         <mat-card *ngFor="let items of datasource">
@@ -16,7 +22,7 @@
             <mat-card-title>{{items.Name}}</mat-card-title>
           </mat-card-header>
           <img mat-card-image src="http://localhost:13764/Img/{{items.Picture}}" alt="{{items.Name}}" />
-          <mat-card-subtitle>{{items.Description}}</mat-card-subtitle>
+          <mat-card-subtitle>{{items.Description.slice(0, 27).trim() + '...'}}</mat-card-subtitle>
           <mat-card-content>
             <span class="color">{{items.Color}}</span>&nbsp;<span class="size"> {{items.Size}}</span>
           </mat-card-content>
@@ -48,22 +54,9 @@
     </ng-template>
   </div>
 
+  <app-cart *ngIf="isShown" [newCarts]="newCarts" [newCarts1]="newCarts1" [isOrderContent]="isOrderContent"
+            [total]="total" [datasource]="datasource" [sum]="sum" [quantity]="quantity" (clickRemove)="itemsFromCart">
+  </app-cart>
 
-
-  <div>
-    <app-cart *ngIf="isShown" [newCarts]="newCarts" [newCarts1]="newCarts1" [isOrderContent]="isOrderContent"
-              [total]="total" [datasource]="datasource" [sum]="sum" [quantity]="quantity" (clickRemove)="itemsFromCart">
-    </app-cart>
-   
-  </div>
-        
-  <!--<div> Выводим имена товаров, которые остались в корзине:
-  
-    <ul *ngFor="let c of itemsFromCart">
-      <li><h4> - {{c?.name}}</h4></li>
-      </ul>
-  </div>-->
 
 </div>
-
-

@@ -1,6 +1,6 @@
 .mat-card {
-  width: 280px;
-  height: 400px;
+  width: 330px;
+  height: 450px;
   margin: 10px 10px 10px 30px;
   display: inline-block;
   text-align: justify;
@@ -10,20 +10,10 @@
 .mat-card-image {
   width: 260px;
   height: 260px;
+  text-align: center;
   margin: 0 0 0 0;
 }
 
-.color {
-  display: inline-block;
-  text-align: left;
-   margin-right: 20px;
-}
-
-.size {
-  display: inline-block;
-  text-align: right;
-  margin-left: 20px;
-}
 .mat-card-title {
   font-family: Verdana;
   font-size: 16px;
@@ -31,10 +21,12 @@
   color: darkolivegreen;
   text-align: center;
 }
+
 .mat-card-subtitle {
   font-family: Verdana;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
+  padding-top: 5px;
   color: darkolivegreen;
 }
 
@@ -46,7 +38,6 @@
 .mat-card-actions {
   margin-left: 10px;
   margin-top: 10px;
-
 }
 
 .button {
@@ -65,24 +56,42 @@
   color: red;
 }
 
+.color {
+  display: inline-block;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.size {
+  display: inline-block;
+  text-align: right;
+  margin-left: 20px;
+  font-family: Verdana;
+  font-size: 12px;
+}
+
 .search {
-  width: 20%;
   font-family: Verdana;
   font-weight: normal;
   font-size: 16px;
   color: rgb(105, 133, 76);
 }
 .mat-paginator {
-  width: 80%;
   background-color: rgb(249, 255, 229);
   font-family: Verdana;
   font-weight: normal;
   font-size: 12px;
 }
-.navigator {
+/*.navigator {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+}*/
+
+.text {
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 16px;
 }
 
