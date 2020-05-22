@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RubricService } from '../rubric.service';
 import { ProductElements } from '../Interfaces/productElements';
+import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
 
 @Component({
   selector: 'app-accessors-pl',
