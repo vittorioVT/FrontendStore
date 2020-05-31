@@ -1,0 +1,32 @@
+<div id="cartblock">
+  <mat-card id="cart">
+    <div id="cartContent">
+      <ul *ngFor="let c of cartSelect">
+        <li>
+          <div class="product">
+            <img class="img" src="http://localhost:13764/Img/{{c?.Picture}}" />
+            {{c?.Name}} <br />
+            Кількість - {{c?.Quantity}} <br />
+            Ціна - {{c?.Price * c?.Quantity}} грн. <br />
+            | <span class="remove" click="removeFromCart(c?.Id)">Видалити</span>
+          </div>
+          <hr />
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="isOrderContent" class="orderContent">
+      Загальна кількість: {{total}} шт. <br />
+        <button mat-flat-button button class="continue" click="continue()">
+          Далі
+        </button>
+    </div>
+    <div *ngIf="!isOrderContent" class="emptyCart">
+      Ваш кошик порожній
+    </div>
+
+
+  </mat-card>
+
+
+
+</div>

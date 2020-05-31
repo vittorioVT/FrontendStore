@@ -11,7 +11,7 @@ import { MatCard } from '@angular/material';
 export class CartComponent implements OnInit {
   
   @Input() isOrderContent; 
-  @Input() datasource;
+  @Input() datasource: ProductElements[];
   @Input() myItems;
   @Input() newCarts;
   @Input() newCarts1;

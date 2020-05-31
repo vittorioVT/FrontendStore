@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { RubricService } from '../rubric.service';
 import { ProductElements } from '../Interfaces/productElements';
 import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
+import { Observable } from 'rxjs';
+//import { CartRubricComponent } from '../shared/cart-rubric';
+
 
 @Component({
   selector: 'app-dress-boy',
@@ -10,17 +13,45 @@ import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
 })
 export class DressBoyComponent implements OnInit {
 
-  dressboy: ProductElements[]; 
+  dressboy: ProductElements[] = [];
+  cartSelect: ProductElements[] = [];
+  isOrderContent = false;
+  price: number = 0;
+  quantity: number = 1;
+  total: number = 0;
 
   constructor(private rubricService: RubricService) { }
 
   ngOnInit() {
     this.rubricService.get().subscribe((data) => {
       this.dressboy = data.filter(x => x.Comment.includes('dressboy'));
-      console.log(this.dressboy);
+
     })
 
+  }
+  // is founded id of product and add product in cart
+  // added in this array price and quantity 
 
+  addCart(id: number) {
+    let result = this.dressboy.find(x => x.Id === id);
+    this.total += 1;
+    let index: number = 0;
+
+    if (this.cartSelect.length === 0) {
+      this.cartSelect.push(result);
+      this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+      
+    } else if (!this.cartSelect.includes(result)) {
+      this.cartSelect.push(result);
+      this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+
+    } else if (this.cartSelect.includes(result)) {
+      index = this.cartSelect.findIndex(x => x.Id === result.Id);
+      this.cartSelect[index].Quantity += 1;
+    }
+    console.log(this.cartSelect);
+    result = null;
+    this.isOrderContent = true;
 
   }
 

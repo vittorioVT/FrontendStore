@@ -39,6 +39,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { CartComponent } from './products-store/cart/cart.component';
+import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component';
 
 
 
@@ -59,6 +60,7 @@ import { CartComponent } from './products-store/cart/cart.component';
     LoginComponent,
     SearchPipe,
     CartComponent,
+    CartRubricComponent,
    ],
   imports: [
     BrowserModule,

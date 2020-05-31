@@ -14,7 +14,7 @@ import { RubricService } from '../rubric.service';
 export class ProductsStoreComponent implements OnInit {
     
   isOrderContent = false;
-  datasource: ProductElements[];
+  datasource: ProductElements[] = [];
   searchValue: '';
   isShown = true;
   total: number = 0;
@@ -29,11 +29,11 @@ export class ProductsStoreComponent implements OnInit {
   public itemsFromCart = [];
   
 
-  constructor(private service: RubricService) { }
+  constructor(private service: ProductStoreService) { }
 
   ngOnInit() {
-    this.service.get().subscribe((data) => {
-      this.datasource = data;
+    this.service.getAll().subscribe((data) => {
+      this.datasource = data as ProductElements[];
     });
 
     //this.service.getAll().subscribe((data) => {
