@@ -15,6 +15,7 @@ export class DressBoyComponent implements OnInit {
 
   dressboy: ProductElements[] = [];
   cartSelect: ProductElements[] = [];
+ 
   isOrderContent = false;
   price: number = 0;
   quantity: number = 1;
@@ -53,9 +54,33 @@ export class DressBoyComponent implements OnInit {
       this.cartSelect[index].Quantity += 1;
       this.totalSum += result.Price;
     }
-    console.log(this.cartSelect);
+    //console.log(this.cartSelect);
     result = null;
     this.isOrderContent = true;
+
+  }
+
+
+  removeFromCart() {
+    if (this.cartSelect.length) {
+      console.log(this.cartSelect.length);
+      //this.cartSelect[0].Quantity -= 1;
+      //this.cartSelect = [];
+      
+      //console.log(this.cartSelect);
+      //console.log(this.cartSelect[0].Quantity);
+    }
+
+    //if (this.newCarts1.length > 0) {
+    //  for (let i of this.newCarts1) {
+    //    if (i.id === id && i.quantity > 1) {
+    //      i.quantity -= 1;
+    //      this.total -= 1;
+    //      this.sum -= i.price;
+    //      this.itemsFromCart = this.newCarts1;
+    //    } else
+    //      if (i.id === id && i.quantity === 1) {
+    //        console.log(i);
 
   }
 

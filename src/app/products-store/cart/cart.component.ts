@@ -33,12 +33,6 @@ export class CartComponent implements OnInit {
 
   }
 
-  removeFromCart2() {
-    
-   // this.clickRemove.emit(this.itemsFromCart);
-    //this.clickRemove.emit();
-  }
-
   //удаляем товары из корзины
   removeFromCart(id: number) {
     
@@ -72,6 +66,14 @@ export class CartComponent implements OnInit {
 
   }
 
+  removeFromCart2() {
+
+    // this.clickRemove.emit(this.itemsFromCart);
+    //this.clickRemove.emit();
+  }
+
 }
+
+
 
 

@@ -28,17 +28,13 @@ export class ProductsStoreComponent implements OnInit {
    
   public itemsFromCart = [];
   
-
   constructor(private service: ProductStoreService) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
       this.datasource = data as ProductElements[];
     });
-
-    //this.service.getAll().subscribe((data) => {
-    //  this.datasource = data as ProductElements[];
-   
+ 
   }
   
     addCart(id: number, name: string, picture: string, price: number, quantity: number = 0) {
@@ -124,7 +120,6 @@ export class ProductsStoreComponent implements OnInit {
     console.log(this.newCarts1);
     return this.newCarts1;
   }
-
-  
+   
 }
 

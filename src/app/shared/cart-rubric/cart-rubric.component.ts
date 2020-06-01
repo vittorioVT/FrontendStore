@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { MatCard } from '@angular/material';
 import { ProductElements } from 'src/app/Interfaces/productElements';
 import { DressBoyComponent } from 'src/app/dress-boy/dress-boy.component';
+
 
 @Component({
   selector: 'app-cart-rubric',
@@ -15,16 +16,22 @@ export class CartRubricComponent implements OnInit {
   @Input() total;
   @Input() totalSum;
 
+  // создаем свое событие для удаления товаров из корзины
+
+  @Output() fromCart: EventEmitter<any> = new EventEmitter();
+
+  
   constructor() { }
 
   ngOnInit() {
-    
   }
 
-  removeFromCart(id: number) {
+  
+  //fromCartEvent() {
+  //  this.fromCart.emit();
+  //  console.log();
 
-    return null;
-  }
+  //}
 
   continue() {
     return null;
