@@ -19,6 +19,7 @@ export class DressBoyComponent implements OnInit {
   price: number = 0;
   quantity: number = 1;
   total: number = 0;
+  totalSum: number = 0;
 
   constructor(private rubricService: RubricService) { }
 
@@ -40,14 +41,17 @@ export class DressBoyComponent implements OnInit {
     if (this.cartSelect.length === 0) {
       this.cartSelect.push(result);
       this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
-      
+      this.totalSum += result.Price;
+
     } else if (!this.cartSelect.includes(result)) {
       this.cartSelect.push(result);
       this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+      this.totalSum += result.Price;
 
     } else if (this.cartSelect.includes(result)) {
       index = this.cartSelect.findIndex(x => x.Id === result.Id);
       this.cartSelect[index].Quantity += 1;
+      this.totalSum += result.Price;
     }
     console.log(this.cartSelect);
     result = null;

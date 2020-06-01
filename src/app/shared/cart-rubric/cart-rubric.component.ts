@@ -13,6 +13,7 @@ export class CartRubricComponent implements OnInit {
   @Input() cartSelect;
   @Input() isOrderContent;
   @Input() total;
+  @Input() totalSum;
 
   constructor() { }
 

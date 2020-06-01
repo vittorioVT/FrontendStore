@@ -16,9 +16,10 @@
     </div>
     <div *ngIf="isOrderContent" class="orderContent">
       Загальна кількість: {{total}} шт. <br />
-        <button mat-flat-button button class="continue" click="continue()">
-          Далі
-        </button>
+      Загальна сума: {{totalSum}} грн.<br />
+      <button mat-flat-button button class="continue" click="continue()">
+        Далі
+      </button>
     </div>
     <div *ngIf="!isOrderContent" class="emptyCart">
       Ваш кошик порожній
