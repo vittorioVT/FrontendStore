@@ -3,13 +3,12 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\dress-boy",
     "\\src\\app\\Interfaces",
     "\\src\\app\\products-store",
     "\\src\\app\\products-store\\cart",
     "\\src\\app\\shared",
     "\\src\\app\\shared\\cart-rubric"
   ],
-  "SelectedNode": "\\src\\app\\dress-boy\\dress-boy.component.ts",
+  "SelectedNode": "\\src\\app\\dress-boy",
   "PreviewInSolutionExplorer": false
 }

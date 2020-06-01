@@ -9,7 +9,7 @@
   right: 20px;
   border: 1px solid #ccc;
   background-color: rgb(255, 255, 102);
-  height: 355px;
+  height: 380px;
   width: 285px;
   /*box-shadow: 3px 3px 3px #111;*/
   box-shadow: 5px 5px 5px #1d1f20;
@@ -20,7 +20,7 @@
 }
 
 #cartContent {
-  height: 285px;
+  height: 300px;
   overflow-y: scroll;
 }
 
@@ -29,7 +29,7 @@
   }
 
 .orderContent {
-  height: 60px;
+  height: 68px;
   background-color: rgb(105, 133, 76);
   color: #fff;
   font-weight: bold;
@@ -40,7 +40,7 @@
 
 .emptyCart {
   text-align: center;
-  height: 50px;
+  height: 68px;
   background-color: rgb(105, 133, 76);
   color: #fff;
   font-family: Verdana;
@@ -66,18 +66,29 @@
 
 .img {
   width: 75px;
+  height: 85px;
   float: left;
   margin-left: 10px;
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
 .continue {
-  float: right;
-  vertical-align: middle;
+  position: fixed;
+  top: 720px;
+  right: 25px;
+  /*float: right;*/
+  /*vertical-align: middle;*/
   color: white;
   background-color: red;
   font-family: Verdana;
+  font-size: 13px;
   font-weight: bold;
+}
+
+.continue button{
+  padding: 0px;
+  margin-bottom: 5px;
+  margin-right: -5px;
 }
 
 .select {
