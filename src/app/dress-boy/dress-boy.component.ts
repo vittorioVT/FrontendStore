@@ -54,34 +54,35 @@ export class DressBoyComponent implements OnInit {
       this.cartSelect[index].Quantity += 1;
       this.totalSum += result.Price;
     }
-    //console.log(this.cartSelect);
+    console.log(this.cartSelect);
     result = null;
     this.isOrderContent = true;
 
   }
 
 
-  removeFromCart() {
-    if (this.cartSelect.length) {
-      console.log(this.cartSelect.length);
-      //this.cartSelect[0].Quantity -= 1;
-      //this.cartSelect = [];
-      
-      //console.log(this.cartSelect);
-      //console.log(this.cartSelect[0].Quantity);
+  removeFromCart(id: number) {
+    //let index: number = 0;
+   // let result = this.cartSelect.findIndex(x => x.Id === id);
+    //console.log(result);
+    //console.log(this.cartSelect.length - 1);
+    //console.log(this.cartSelect[this.cartSelect.length - 1]);
+
+    if (this.cartSelect[this.cartSelect.length-1].Quantity === 1) {
+      this.total -= 1;
+      this.totalSum -= this.cartSelect[this.cartSelect.length - 1].Price;
+      this.cartSelect.pop();
+
+      console.log("Ваш товар удален!");
+          
     }
-
-    //if (this.newCarts1.length > 0) {
-    //  for (let i of this.newCarts1) {
-    //    if (i.id === id && i.quantity > 1) {
-    //      i.quantity -= 1;
-    //      this.total -= 1;
-    //      this.sum -= i.price;
-    //      this.itemsFromCart = this.newCarts1;
-    //    } else
-    //      if (i.id === id && i.quantity === 1) {
-    //        console.log(i);
-
+    else if (this.cartSelect[this.cartSelect.length - 1].Quantity > 1) {
+      
+      this.cartSelect[this.cartSelect.length-1].Quantity -= 1;
+      this.total -= 1;
+      this.totalSum -= this.cartSelect[this.cartSelect.length - 1].Price;
+      console.log(this.cartSelect[this.cartSelect.length-1]);
+    }
+    console.log(this.cartSelect);
   }
-
 }
