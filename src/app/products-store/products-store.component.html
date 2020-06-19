@@ -28,7 +28,7 @@
           </mat-card-content>
           <mat-card-actions>
             <span class="price">{{items.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-            <button mat-button mat-raised-button (click)="addCart(items.Id, items.Name,items.Picture, items.Price, quantity)" class="button">Купити</button>
+            <button mat-button mat-raised-button (click)="addCart(items.Id)" class="button">Купити</button>
           </mat-card-actions>
         </mat-card>
       </div>
@@ -47,15 +47,16 @@
           </mat-card-content>
           <mat-card-actions>
             <span class="price">{{items.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-            <button mat-button mat-raised-button (click)="addToCart(items.Id, items.Name,items.Picture, items.Price, quantity)" class="button">Купити</button>
+            <button mat-button mat-raised-button (click)="addCart(items.Id)" class="button">Купити</button>
           </mat-card-actions>
         </mat-card>
       </div>
     </ng-template>
   </div>
 
-  <app-cart *ngIf="isShown" [newCarts]="newCarts" [newCarts1]="newCarts1" [isOrderContent]="isOrderContent"
-            [total]="total" [datasource]="datasource" [sum]="sum" [quantity]="quantity" (clickRemove)="itemsFromCart">
+  <app-cart *ngIf="isShown" [cartSelect]="cartSelect" [isOrderContent]="isOrderContent"
+            [(total)]="total" [totalSum]="totalSum">
+    <!--(clickRemove)="itemsFromCart"-->
   </app-cart>
 
 

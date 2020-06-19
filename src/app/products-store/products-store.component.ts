@@ -13,13 +13,20 @@ import { RubricService } from '../rubric.service';
 })
 export class ProductsStoreComponent implements OnInit {
     
-  isOrderContent = false;
   datasource: ProductElements[] = [];
+  cartSelect: ProductElements[] = [];
+
+  isOrderContent = false;
+
+  price: number = 0;
+  quantity: number = 1;
+
+  total: number = 0;
+  totalSum: number = 0;
+
+
   searchValue: '';
   isShown = true;
-  total: number = 0;
-  newCarts = [];
-  newCarts1 = [];
   sum: number = 0;
   count: number = 0;
   idCountArray: number[] = [1];
@@ -32,29 +39,82 @@ export class ProductsStoreComponent implements OnInit {
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
-      this.datasource = data as ProductElements[];
+      this.datasource = data;
     });
- 
   }
-  
-    addCart(id: number, name: string, picture: string, price: number, quantity: number = 0) {
-    quantity = this.returnCount(id);
+
+  addCart(id: number) {
+    let result = this.datasource.find(x => x.Id === id);
+    console.log(result);
     this.total += 1;
-    this.sum += price;
+    let index: number = 0;
+
+    if (this.cartSelect.length === 0) {
+      this.cartSelect.push(result);
+      this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+      this.totalSum += result.Price;
+    }
+    else if (!this.cartSelect.includes(result)) {
+      this.cartSelect.push(result);
+      this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+      this.totalSum += result.Price;
+
+    } else if (this.cartSelect.includes(result)) {
+      index = this.cartSelect.findIndex(x => x.Id === result.Id);
+      console.log(index);
+      this.cartSelect[index].Quantity += 1;
+      this.totalSum += result.Price;
+    }
+    console.log(this.cartSelect);
+    result = null;
     this.isOrderContent = true;
-
-   // console.log(this.itemsFromCart);
-
-    this.service.add(id, name, picture, price, quantity);
-    this.service.newCarts;
-    this.newCarts = this.service.newCarts;
-    
-    this.newCarts1 = this.returnNewArray(this.newCarts);
-    
-    console.log(this.newCarts1);
-    return this.newCarts1;   
-        
   }
+
+  //addCart(id: number) {
+  //  let result = this.dressboy.find(x => x.Id === id);
+  //  this.total += 1;
+  //  let index: number = 0;
+
+  //  if (this.cartSelect.length === 0) {
+  //    this.cartSelect.push(result);
+  //    this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+  //    this.totalSum += result.Price;
+
+  //  } else if (!this.cartSelect.includes(result)) {
+  //    this.cartSelect.push(result);
+  //    this.cartSelect[this.cartSelect.length - 1].Quantity += 1;
+  //    this.totalSum += result.Price;
+
+  //  } else if (this.cartSelect.includes(result)) {
+  //    index = this.cartSelect.findIndex(x => x.Id === result.Id);
+  //    this.cartSelect[index].Quantity += 1;
+  //    this.totalSum += result.Price;
+  //  }
+  //  console.log(this.cartSelect);
+  //  result = null;
+  //  this.isOrderContent = true;
+
+  //}
+
+
+  //  addCart(id: number, name: string, picture: string, price: number, quantity: number = 0) {
+  //  quantity = this.returnCount(id);
+  //  this.total += 1;
+  //  this.sum += price;
+  //  this.isOrderContent = true;
+
+  // // console.log(this.itemsFromCart);
+
+  //  this.service.add(id, name, picture, price, quantity);
+  //  this.service.newCarts;
+  //  this.newCarts = this.service.newCarts;
+    
+  //  this.newCarts1 = this.returnNewArray(this.newCarts);
+    
+  //  console.log(this.newCarts1);
+  //  return this.newCarts1;   
+        
+  //}
   
   //массив, групирующий товары по id, и выводит в корзину не каждый товар
   // по отдельности, а групами(id, quant)
@@ -115,11 +175,5 @@ export class ProductsStoreComponent implements OnInit {
     return this.count;
   }
 
-  itemsRemoved() {
-    console.log(this.itemsFromCart);
-    console.log(this.newCarts1);
-    return this.newCarts1;
-  }
-   
 }
 

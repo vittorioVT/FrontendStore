@@ -51,7 +51,48 @@ export class DressGirlComponent implements OnInit {
     this.isOrderContent = true;
   }
 
+  removeFromCart(id: number) {
 
+    let index: number = 0;
+    let idN = this.cartSelect[index].Id;
+
+    let result = this.cartSelect.filter(x => x.Id === id);
+
+    //console.log(id);
+    //console.log(this.cartSelect[index].Id);
+
+    //let result = this.cartSelect.find(x => x.Id === id);
+    
+    console.log(result);
+
+
+
+    //let index: number = 0;
+    // let result = this.cartSelect.findIndex(x => x.Id === id);
+    //console.log(result);
+    //console.log(this.cartSelect.length - 1);
+    //console.log(this.cartSelect[this.cartSelect.length - 1]);
+
+    if (this.cartSelect[this.cartSelect.length - 1].Quantity === 1) {
+      this.total -= 1;
+      this.totalSum -= this.cartSelect[this.cartSelect.length - 1].Price;
+
+      // удаляет всегда только последний элемент
+      this.cartSelect.pop();
+
+      console.log("Ваш товар удален!");
+
+    }
+    else if (this.cartSelect[this.cartSelect.length - 1].Quantity > 1) {
+
+      this.cartSelect[this.cartSelect.length - 1].Quantity -= 1;
+      this.total -= 1;
+      this.totalSum -= this.cartSelect[this.cartSelect.length - 1].Price;
+      console.log(this.cartSelect[this.cartSelect.length - 1]);
+    }
+    console.log(this.cartSelect);
+    index += 1;
+  }
 
 }
 
