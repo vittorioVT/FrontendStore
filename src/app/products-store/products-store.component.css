@@ -1,3 +1,9 @@
+.text {
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 16px;
+}
+
 .mat-card {
   width: 330px;
   height: 450px;
@@ -76,22 +82,17 @@
   font-size: 16px;
   color: rgb(105, 133, 76);
 }
+
 .mat-paginator {
   background-color: rgb(249, 255, 229);
   font-family: Verdana;
   font-weight: normal;
   font-size: 12px;
 }
-/*.navigator {
+
+.navigator {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
-}*/
-
-.text {
-  font-family: Verdana;
-  font-weight: bold;
-  font-size: 16px;
 }
-
