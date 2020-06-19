@@ -62,6 +62,16 @@ export class DressBoyComponent implements OnInit {
 
 
   removeFromCart(id: number) {
+
+    let index: number = 0;
+    console.log(id);
+    console.log(this.cartSelect[index].Id);
+
+    let result = this.cartSelect.find(x => x.Id === id);
+    console.log(result);
+    
+    
+
     //let index: number = 0;
    // let result = this.cartSelect.findIndex(x => x.Id === id);
     //console.log(result);
@@ -71,6 +81,8 @@ export class DressBoyComponent implements OnInit {
     if (this.cartSelect[this.cartSelect.length-1].Quantity === 1) {
       this.total -= 1;
       this.totalSum -= this.cartSelect[this.cartSelect.length - 1].Price;
+
+      // удаляет всегда только последний элемент
       this.cartSelect.pop();
 
       console.log("Ваш товар удален!");

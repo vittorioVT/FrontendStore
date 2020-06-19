@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-    <mat-card *ngFor="let i of dressGirl">
+    <mat-card *ngFor="let i of dressgirl">
       <div class="col-12">
         <mat-card-header>
           <mat-card-title>{{i.Name}}</mat-card-title>
@@ -12,9 +12,17 @@
         </mat-card-content>
         <mat-card-actions>
           <span class="price">{{i.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-          <button mat-button mat-raised-button class="button">Купити</button>
+          <button mat-button mat-raised-button class="button" (click)="addCart(i.Id)">Купити</button>
         </mat-card-actions>
       </div>
     </mat-card>
   </div>
+  <div>
+    <app-cart-rubric [cartSelect]="cartSelect" [isOrderContent]="isOrderContent" [(total)]="total"
+                     [totalSum]="totalSum" (fromCartEvent)="removeFromCart(id)">
+
+    </app-cart-rubric>
+
+  </div>
+
 </div>
