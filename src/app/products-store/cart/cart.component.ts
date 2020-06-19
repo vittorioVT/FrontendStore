@@ -15,22 +15,16 @@ export class CartComponent implements OnInit {
   @Input() total;
   @Input() totalSum;
 
-  
-  //@Input() isOrderContent; 
-  //@Input() datasource: ProductElements[];
-  //@Input() myItems;
-  //@Input() newCarts;
-  //@Input() newCarts1;
-  //@Input() total;
-  //@Input() sum;
-  //@Input() quantity;
+ //создаем свое событие
+  @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
 
-  //public itemsFromCart = [];
-    
-  
-  //создаем свое событие
+  removeFromCart(id: any) {
 
- @Output() clickRemove: EventEmitter<any> = new EventEmitter();
+    this.clickRemove.emit(id);
+    console.log(id);
+  }
+
+  //removeFromCart
 
   constructor() {
   }
@@ -38,6 +32,8 @@ export class CartComponent implements OnInit {
   ngOnInit() {
 
   }
+
+
 
   //удаляем товары из корзины
   //removeFromCart(id: number) {

@@ -54,9 +54,9 @@
     </ng-template>
   </div>
 
-  <app-cart *ngIf="isShown" [cartSelect]="cartSelect" [isOrderContent]="isOrderContent"
-            [(total)]="total" [totalSum]="totalSum">
-    <!--(clickRemove)="itemsFromCart"-->
+  <app-cart [cartSelect]="cartSelect" [isOrderContent]="isOrderContent"
+            [(total)]="total" [totalSum]="totalSum" (clickRemove)="clickRemove($event)">
+    <!--(clickRemove)="removeFromCart"-->
   </app-cart>
 
 
