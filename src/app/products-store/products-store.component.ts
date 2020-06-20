@@ -33,7 +33,7 @@ export class ProductsStoreComponent implements OnInit {
 
   addCart(id: number) {
     let result = this.datasource.find(x => x.Id === id);
-    console.log(result);
+    //console.log(result);
     this.total += 1;
     let index: number = 0;
 
@@ -49,22 +49,37 @@ export class ProductsStoreComponent implements OnInit {
 
     } else if (this.cartSelect.includes(result)) {
       index = this.cartSelect.findIndex(x => x.Id === result.Id);
-      console.log(index);
+      //console.log(index);
       this.cartSelect[index].Quantity += 1;
       this.totalSum += result.Price;
     }
-    console.log(this.cartSelect);
+    //console.log(this.cartSelect);
     result = null;
     this.isOrderContent = true;
   }
 
   clickRemove(id: number) {
-    console.log(this.cartSelect);
-    console.log("Работает!");
-    console.log(id);
+    let result = this.cartSelect.find(x => x.Id === id);
+    //console.log(result);
 
+    if (result.Quantity === 1 && this.cartSelect.length === 1) {
+      this.cartSelect.pop();
+      this.total = 0;
+      this.totalSum = 0;
+      result.Quantity = 0;
+
+      this.isOrderContent = false;
+    } else if (result.Quantity > 1) {
+      result.Quantity -= 1;
+      this.total -= 1;
+      this.totalSum -= result.Price;
+    } else if (result.Quantity === 1) {
+      result.Quantity -= 1;
+      this.total -= 1;
+      this.totalSum -= result.Price;
+      this.cartSelect = this.cartSelect.filter(x => x != result);
+    }
   }
-
 
 }
 

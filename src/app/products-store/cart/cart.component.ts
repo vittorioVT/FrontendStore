@@ -18,61 +18,20 @@ export class CartComponent implements OnInit {
  //создаем свое событие
   @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
 
-  removeFromCart(id: any) {
-
-    this.clickRemove.emit(id);
-    console.log(id);
-  }
-
-  //removeFromCart
-
   constructor() {
   }
 
   ngOnInit() {
+  }
 
+  removeFromCart(id: any) {
+    this.clickRemove.emit(id);
   }
 
 
-
-  //удаляем товары из корзины
-  //removeFromCart(id: number) {
-    
-  //  if (this.newCarts1.length > 0) {
-  //  for (let i of this.newCarts1) {
-  //    if (i.id === id && i.quantity > 1) { 
-  //      i.quantity -= 1;
-  //    this.total -= 1;
-  //      this.sum -= i.price;
-  //      this.itemsFromCart = this.newCarts1; 
-  //    } else
-  //      if (i.id === id && i.quantity === 1) {
-  //        console.log(i);
-  //        this.newCarts1 = this.newCarts1.filter(item => item.id !== id);
-  //        this.total -= 1;
-  //        this.sum -= i.price;
-  //        this.itemsFromCart = this.newCarts1;
-  //      }
-  //    }
-  //  }
-  //  if (this.newCarts1.length === 0) {
-  //    this.newCarts1 = [];
-  //    this.itemsFromCart = this.newCarts1;
-  //  }
-    
-  //  console.log(this.itemsFromCart);
-
-  //  //посылаем событие
-  //  this.clickRemove.emit(this.itemsFromCart);
-  //  return this.itemsFromCart;
-
-  //}
-
-  //removeFromCart2() {
-
-  //  // this.clickRemove.emit(this.itemsFromCart);
-  //  //this.clickRemove.emit();
-  //}
+  continue() {
+    return console.log("Ваше замовлення буде готове впродовж 24 годин");
+  }
 
 }
 

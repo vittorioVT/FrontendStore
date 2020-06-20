@@ -19,7 +19,6 @@ export class CartRubricComponent implements OnInit {
 
   // создаем свое событие для удаления товаров из корзины
 
-  @Output() fromCart: EventEmitter<any> = new EventEmitter();
   @Output() fromCartEvent: EventEmitter<ProductElements[]> = new EventEmitter();
 
   constructor() { }
