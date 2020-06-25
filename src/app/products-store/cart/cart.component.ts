@@ -1,7 +1,10 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, OnInit, Input, Output} from '@angular/core';
 import { ProductElements } from 'src/app/Interfaces/productElements';
 import { EventEmitter } from '@angular/core';
 import { MatCard } from '@angular/material';
+
+import { TemplateRef } from '@angular/core';
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 @Component({
   selector: 'app-cart',
@@ -10,6 +13,8 @@ import { MatCard } from '@angular/material';
 })
 export class CartComponent implements OnInit {
 
+  modalRef: BsModalRef;
+
   @Input() cartSelect: ProductElements[];
   @Input() isOrderContent;
   @Input() total;
@@ -17,8 +22,9 @@ export class CartComponent implements OnInit {
 
  //создаем свое событие
   @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
+ // @Output() openModal: EventEmitter<BsModalService> = new EventEmitter();
 
-  constructor() {
+  constructor(private modalService: BsModalService) {
   }
 
   ngOnInit() {
@@ -28,9 +34,13 @@ export class CartComponent implements OnInit {
     this.clickRemove.emit(id);
   }
 
+  continue(template: TemplateRef<any>) {
 
-  continue() {
-    return console.log("Ваше замовлення буде готове впродовж 24 годин");
+    this.modalRef = this.modalService.show(template);
+
+    //this.openModal.emit();
+    
+    //console.log("Ваше замовлення буде готове впродовж 24 годин");
   }
 
 }

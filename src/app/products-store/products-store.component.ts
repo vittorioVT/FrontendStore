@@ -6,13 +6,15 @@ import { IAppState } from '../Interfaces/IAppState';
 import { RubricService } from '../rubric.service';
 
 
+
 @Component({
   selector: 'app-products-store',
   templateUrl: './products-store.component.html',
   styleUrls: ['./products-store.component.css']
 })
 export class ProductsStoreComponent implements OnInit {
-    
+
+
   datasource: ProductElements[] = [];
   cartSelect: ProductElements[] = [];
   isOrderContent = false;
@@ -31,6 +33,7 @@ export class ProductsStoreComponent implements OnInit {
     });
   }
 
+  
   addCart(id: number) {
     let result = this.datasource.find(x => x.Id === id);
     //console.log(result);

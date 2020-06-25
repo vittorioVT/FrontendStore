@@ -17,6 +17,7 @@ import { CartService } from './cart.service';
 //ngx-bootstrap
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { AlertModule } from 'ngx-bootstrap/alert';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 //material design
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -41,6 +42,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { CartComponent } from './products-store/cart/cart.component';
 import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component';
+
 
 
 
@@ -85,6 +87,7 @@ import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component'
     //ngx-bootstrap
     CollapseModule.forRoot(),
     AlertModule.forRoot(),
+    ModalModule.forRoot(),
   ],
 
   exports: [
