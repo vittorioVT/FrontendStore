@@ -19,10 +19,8 @@
   </div>
 
   <div>
-    <app-cart-rubric [cartSelect]="cartSelect" [isOrderContent]="isOrderContent" [(total)]="total"
-                     [totalSum]="totalSum" (fromCartEvent)="removeFromCart(id)">
-
-      <!--(fromCart)="removeFromCart($event)-->
+    <app-cart-rubric [cartSelect]="cartSelect" [isOrderContent]="isOrderContent" [total]="total"
+                     [totalSum]="totalSum" (clickRemove)="clickRemove($event)">
     </app-cart-rubric>
 
   </div>
