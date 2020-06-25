@@ -19,35 +19,21 @@ export class CartRubricComponent implements OnInit {
 
   // создаем свое событие для удаления товаров из корзины
 
-  @Output() fromCartEvent: EventEmitter<ProductElements[]> = new EventEmitter();
+  @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  //fromCartEvent(id: number) {
-  //  let index = this.cartSelect.findIndex(x => x.Id === id);
-  //  if (this.cartSelect[index].Quantity > 1) {
-  //    this.cartSelect[index].Quantity -= 1;
-  //    this.total -= 1
-  //  } else {
-  //    this.cartSelect[index].Quantity -= 1;
-  //    this.cartSelect.shift();
-  //  }
-  //  console.log(index);
+  removeFromCart(id: any) {
+    this.clickRemove.emit(id);
+    
+  }
 
-
-  //  this.fromCart.emit(id);
-  //  return this.cartSelect;
-  //}
-
-
-
-
+  
   continue() {
-    return null;
-
+    return console.log("Ваше замовлення прийняте до роботи");
   }
 
 

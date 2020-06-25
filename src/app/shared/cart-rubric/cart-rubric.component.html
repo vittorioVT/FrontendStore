@@ -8,7 +8,7 @@
             {{c?.Name}} <br />
             Кількість - {{c?.Quantity}} <br />
             Ціна - {{c?.Price * c?.Quantity}} грн. <br />
-            | <span class="remove" (click)="fromCartEvent.emit($event)">Видалити</span>
+            | <span class="remove" (click)="removeFromCart(c?.Id)">Видалити</span>
           </div>
           <hr />
         </li>
