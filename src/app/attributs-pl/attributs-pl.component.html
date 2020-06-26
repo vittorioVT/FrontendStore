@@ -12,7 +12,7 @@
         </mat-card-content>
         <mat-card-actions>
           <span class="price">{{i.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-          <button mat-button mat-raised-button class="button">Купити</button>
+          <button mat-button mat-raised-button class="button" (click)="addCart(i.Id)">Купити</button>
         </mat-card-actions>
       </div>
     </mat-card>
