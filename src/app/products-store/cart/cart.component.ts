@@ -5,6 +5,8 @@ import { MatCard } from '@angular/material';
 
 import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { ModalComponent } from 'src/app/shared/modal/modal.component';
+
 
 @Component({
   selector: 'app-cart',
@@ -13,16 +15,18 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 })
 export class CartComponent implements OnInit {
 
-  modalRef: BsModalRef;
+  bsmodalRef: BsModalRef;
+  list: any[] = [];
 
   @Input() cartSelect: ProductElements[];
   @Input() isOrderContent;
   @Input() total;
   @Input() totalSum;
+  @Input() modalSelect: ProductElements[];
 
  //создаем свое событие
   @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
- // @Output() openModal: EventEmitter<BsModalService> = new EventEmitter();
+
 
   constructor(private modalService: BsModalService) {
   }
@@ -34,11 +38,27 @@ export class CartComponent implements OnInit {
     this.clickRemove.emit(id);
   }
 
-  continue(template: TemplateRef<any>) {
+  openModalWithComponent() {
 
-    this.modalRef = this.modalService.show(template);
-    //console.log("Ваше замовлення буде готове впродовж 24 годин");
+    const initialState = {
+      list: [
+        `Загальна кількість товару - ${this.total}`,
+        `Загальна сума - ${this.totalSum}`
+      ], title: 'Ваше замовлення становить: '
+    };
+    this.bsmodalRef = this.modalService.show(ModalComponent, { initialState });
+    this.bsmodalRef.content.closeBtnName = 'Close';
+
+
+
   }
+
+
+  //continue(template: TemplateRef<any>) {
+
+  //  this.bsmodalRef = this.modalService.show(template);
+  //  //console.log("Ваше замовлення буде готове впродовж 24 годин");
+  //}
 
 }
 

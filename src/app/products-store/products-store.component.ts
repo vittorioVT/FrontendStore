@@ -17,6 +17,7 @@ export class ProductsStoreComponent implements OnInit {
 
   datasource: ProductElements[] = [];
   cartSelect: ProductElements[] = [];
+  modalSelect: ProductElements[] = [];
   isOrderContent = false;
   price: number = 0;
   quantity: number = 1;
@@ -81,6 +82,7 @@ export class ProductsStoreComponent implements OnInit {
       this.total -= 1;
       this.totalSum -= result.Price;
       this.cartSelect = this.cartSelect.filter(x => x != result);
+      this.modalSelect = this.cartSelect;
     }
   }
 

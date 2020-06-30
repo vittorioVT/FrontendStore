@@ -42,8 +42,7 @@ import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
 import { CartComponent } from './products-store/cart/cart.component';
 import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component';
-
-
+import { ModalComponent } from './shared/modal/modal.component';
 
 
 
@@ -65,6 +64,7 @@ import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component'
     SearchPipe,
     CartComponent,
     CartRubricComponent,
+    ModalComponent,
    ],
   imports: [
     BrowserModule,
@@ -93,7 +93,9 @@ import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component'
   exports: [
     MatCardModule
   ],
-
+  entryComponents: [
+    ModalComponent
+  ],
   providers: [ProductStoreService, AuthFrontService, CartService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
