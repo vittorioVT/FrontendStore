@@ -1,7 +1,8 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, TemplateRef } from '@angular/core';
 import { MatCard } from '@angular/material';
 import { ProductElements } from 'src/app/Interfaces/productElements';
 import { DressBoyComponent } from 'src/app/dress-boy/dress-boy.component';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -10,6 +11,8 @@ import { DressBoyComponent } from 'src/app/dress-boy/dress-boy.component';
   styleUrls: ['./cart-rubric.component.css']
 })
 export class CartRubricComponent implements OnInit {
+
+  modalRef: BsModalRef;
 
   @Input() cartSelect: ProductElements[];
   @Input() isOrderContent;
@@ -21,7 +24,7 @@ export class CartRubricComponent implements OnInit {
 
   @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
 
-  constructor() { }
+  constructor(private modalService: BsModalService) { }
 
   ngOnInit() {
   }
@@ -31,10 +34,16 @@ export class CartRubricComponent implements OnInit {
     
   }
 
-  
-  continue() {
-    return console.log("Ваше замовлення прийняте до роботи");
+  continue(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+    console.log("Ваше замовлення буде готове впродовж 24 годин");
   }
+
+  //continue(template: TemplateRef<any>) {
+
+  //  this.modalRef = this.modalService.show(template);
+  //  console.log("Ваше замовлення буде готове впродовж 24 годин");
+  //}
 
 
 }

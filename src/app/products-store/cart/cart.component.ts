@@ -37,9 +37,6 @@ export class CartComponent implements OnInit {
   continue(template: TemplateRef<any>) {
 
     this.modalRef = this.modalService.show(template);
-
-    //this.openModal.emit();
-    
     //console.log("Ваше замовлення буде готове впродовж 24 годин");
   }
 

@@ -3,6 +3,7 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\attributs-pl",
     "\\src\\app\\dress-boy",
     "\\src\\app\\dress-girl",
     "\\src\\app\\products-store",
@@ -10,6 +11,6 @@
     "\\src\\app\\shared",
     "\\src\\app\\shared\\cart-rubric"
   ],
-  "SelectedNode": "\\src\\app\\products-store\\cart\\cart.component.ts",
+  "SelectedNode": "\\src\\app\\shared\\cart-rubric\\cart-rubric.component.ts",
   "PreviewInSolutionExplorer": false
 }
