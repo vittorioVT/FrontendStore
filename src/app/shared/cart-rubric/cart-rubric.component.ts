@@ -12,7 +12,8 @@ import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 })
 export class CartRubricComponent implements OnInit {
 
-  modalRef: BsModalRef;
+  modalRef: BsModalRef | null;
+  modalRef2: BsModalRef;
 
   @Input() cartSelect: ProductElements[];
   @Input() isOrderContent;
@@ -33,6 +34,24 @@ export class CartRubricComponent implements OnInit {
     this.clickRemove.emit(id);
     
   }
+
+  openModal(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
+  }
+
+  openModal2(template: TemplateRef<any>) {
+    this.modalRef2 = this.modalService.show(template, { class: 'second' });
+  }
+
+  closeFirstModal() {
+    if (!this.modalRef) {
+      return;
+    }
+
+    this.modalRef.hide();
+    this.modalRef = null;
+  }
+
 
   continue(template: TemplateRef<any>) {
     this.modalRef = this.modalService.show(template);
