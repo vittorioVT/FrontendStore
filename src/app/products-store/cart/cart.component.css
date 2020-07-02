@@ -97,10 +97,39 @@
   cursor: pointer;
 }
 
-/*.smartButton {
-  display: none;
+
+li {
+  list-style-type: none;
 }
 
-.grandtotal ul {
-  list-style: none;
-}*/ 
+.left {
+  margin-left: 70px;
+  margin-right: 25px;
+}
+
+.right {
+  margin-left: 25px;
+}
+
+.modal-header {
+  background-color: rgb(105, 133, 76);
+  color: #fff;
+}
+
+.modal-body {
+  background-color: rgb(255, 255, 102);
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(105, 133, 76);
+}
+
+.title {
+  display: inline-block;
+  text-align: center;
+}
+
+.totalOrder {
+  color: red;
+}
+
