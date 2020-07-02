@@ -5,7 +5,7 @@ import { MatCard } from '@angular/material';
 
 import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
-import { ModalComponent } from 'src/app/shared/modal/modal.component';
+
 
 
 @Component({
@@ -15,14 +15,16 @@ import { ModalComponent } from 'src/app/shared/modal/modal.component';
 })
 export class CartComponent implements OnInit {
 
-  bsmodalRef: BsModalRef;
-  list: any[] = [];
-
+  // variable for modal
+  modalRef: BsModalRef | null;
+  modalRef2: BsModalRef;
+  
   @Input() cartSelect: ProductElements[];
   @Input() isOrderContent;
   @Input() total;
   @Input() totalSum;
-  @Input() modalSelect: ProductElements[];
+
+  productSelect: ProductElements[] = [];
 
  //создаем свое событие
   @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
@@ -38,27 +40,31 @@ export class CartComponent implements OnInit {
     this.clickRemove.emit(id);
   }
 
-  openModalWithComponent() {
+  // генерируем открытие модального окна
 
-    const initialState = {
-      list: [
-        `Загальна кількість товару - ${this.total}`,
-        `Загальна сума - ${this.totalSum}`
-      ], title: 'Ваше замовлення становить: '
-    };
-    this.bsmodalRef = this.modalService.show(ModalComponent, { initialState });
-    this.bsmodalRef.content.closeBtnName = 'Close';
+  continue(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-md' });
+  }
 
+  // функциональ второго модального окна
 
-
+  openModal2(template: TemplateRef<any>) {
+    this.modalRef2 = this.modalService.show(template, { class: 'second' });
+    this.modalRef.hide();
+    this.modalRef = null;
+    this.isOrderContent = false;
+    //ощищаю корзину и дублирую массив для отправки в б/д
+    this.productSelect = this.cartSelect;
+    console.log(this.productSelect);
+    this.cartSelect = [];
   }
 
 
-  //continue(template: TemplateRef<any>) {
+  back() {
+    this.modalRef.hide();
+    this.modalRef = null;
+  }
 
-  //  this.bsmodalRef = this.modalService.show(template);
-  //  //console.log("Ваше замовлення буде готове впродовж 24 годин");
-  //}
 
 }
 

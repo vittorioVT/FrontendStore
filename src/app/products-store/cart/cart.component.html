@@ -16,14 +16,50 @@
     </div>
     <div *ngIf="isOrderContent" class="orderContent">
       Загальна кількість: {{total}} шт.<br />
-      <button mat-flat-button button class="continue" (click)="openModalWithComponent()">Далі</button>
+      <button mat-flat-button button class="continue" (click)="continue(template)">Далі</button>
       Заг. сумма: {{totalSum}} грн.<br />
     </div>
     <div *ngIf="!isOrderContent" class="emptyCart">
       Ваш кошик порожній
     </div>
   </mat-card>
+  <div>
+    <ng-template #template>
+      <div class="modal-header title">
+        <h4 class="modal-title">Ваше замовлення становить:</h4>
+      </div>
+      <div class="modal-body">
+        <ul *ngFor="let i of cartSelect">
+          <li>
+            {{i.Name}} - {{i.Quantity}} шт.
+          </li>
+        </ul>
+        <hr />
+        <ul>
+          <li>
+            Загальна кількість товару - {{this.total}}
+          </li>
+          <li class="totalOrder">
+            Сума до сплати - {{this.totalSum}}
+          </li>
+        </ul>
+        <button type="button" class="btn btn-danger left" (click)="back()">Повернутися</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-success right" (click)="openModal2(templateNested)">Підтвердити</button>
+      </div>
+    </ng-template>
 
+    <ng-template #templateNested>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Ваше замовлення відправлено. Протягом 24 годин ми з Вами зв'яжемося</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body totalOrder">
+        Щоб зробити ще одне замовлення, необхідно перезагрузити сторінку<br>
+      </div>
+    </ng-template>
+  </div>
 </div>
 
 
