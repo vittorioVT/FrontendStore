@@ -4,6 +4,7 @@ import { MatCardModule, MatCardContent, MatCard, MatSort, MatTableDataSource, Ma
 import { ProductElements } from '../Interfaces/productElements';
 import { IAppState } from '../Interfaces/IAppState';
 import { RubricService } from '../rubric.service';
+import { AuthFrontService } from '../auth-front.service';
 
 
 
@@ -26,7 +27,8 @@ export class ProductsStoreComponent implements OnInit {
 
     searchValue: '';
   
-  constructor(private service: ProductStoreService) { }
+  constructor(private service: ProductStoreService,
+                    private auth: AuthFrontService) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {

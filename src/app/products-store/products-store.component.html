@@ -53,9 +53,7 @@
       </div>
     </ng-template>
   </div>
-
-  <app-cart [cartSelect]="cartSelect" [modalSelect]="modalSelect" [isOrderContent]="isOrderContent"
-            [(total)]="total" [totalSum]="totalSum" (clickRemove)="clickRemove($event)">
-  </app-cart>
- 
+    <app-cart *ngIf="auth.isAuthenticated" [cartSelect]="cartSelect" [modalSelect]="modalSelect" [isOrderContent]="isOrderContent"
+              [(total)]="total" [totalSum]="totalSum" (clickRemove)="clickRemove($event)">
+    </app-cart>
 </div>
