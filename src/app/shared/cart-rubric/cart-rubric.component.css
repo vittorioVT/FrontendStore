@@ -95,3 +95,24 @@
   margin: 10px;
   cursor: pointer;
 }
+li{
+  list-style-type: none;
+}
+
+.left {
+  margin-left: 70px;
+  margin-right: 25px;
+}
+.right {
+  margin-left: 25px;
+}
+
+.modal-title h4{
+ color: green;
+
+}
+.title {
+  display: inline-block;
+  text-align: center;
+}
+

@@ -20,6 +20,7 @@ export class CartRubricComponent implements OnInit {
   @Input() total;
   @Input() totalSum;
 
+  productSelect: ProductElements[] = [];
 
   // создаем свое событие для удаления товаров из корзины
 
@@ -35,34 +36,28 @@ export class CartRubricComponent implements OnInit {
     
   }
 
-  openModal(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template, { class: 'modal-sm' });
+  // генерируем открытие модального окна
+
+  continue(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template, { class: 'modal-md' });
   }
+    
+  // функциональ второго модального окна
 
   openModal2(template: TemplateRef<any>) {
     this.modalRef2 = this.modalService.show(template, { class: 'second' });
+    this.modalRef.hide();
+    this.modalRef = null;
+    this.isOrderContent = false;
+    //ощищаю корзину и дублирую массив для отправки в б/д
+    this.productSelect = this.cartSelect;
+    console.log(this.productSelect);
+    this.cartSelect = [];
   }
-
-  closeFirstModal() {
-    if (!this.modalRef) {
-      return;
-    }
-
+ 
+ 
+  back() {
     this.modalRef.hide();
     this.modalRef = null;
   }
-
-
-  continue(template: TemplateRef<any>) {
-    this.modalRef = this.modalService.show(template);
-    console.log("Ваше замовлення буде готове впродовж 24 годин");
-  }
-
-  //continue(template: TemplateRef<any>) {
-
-  //  this.modalRef = this.modalService.show(template);
-  //  console.log("Ваше замовлення буде готове впродовж 24 годин");
-  //}
-
-
 }

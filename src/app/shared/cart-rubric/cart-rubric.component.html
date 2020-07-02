@@ -17,7 +17,7 @@
     <div *ngIf="isOrderContent" class="orderContent">
       Загальна кількість: {{total}} шт. <br />
       Загальна сума: {{totalSum}} грн.<br />
-      <button mat-flat-button button class="continue" (click)="openModal(template)">
+      <button mat-flat-button button class="continue" (click)="continue(template)">
         <!--(click)="continue(template)-->
         Далі
       </button>
@@ -30,30 +30,27 @@
   <div>
 
     <ng-template #template>
-      <div class="modal-header">
-        <h4 class="modal-title pull-left">First modal</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
+      <div class="modal-header title">
+        <h4 class="modal-title">Ваше замовлення становить:</h4>
       </div>
       <div class="modal-body">
-        This is a first modal
         <ul *ngFor="let i of cartSelect">
           <li>
-            {{i.Name}} - {{i.Quantity}}шт.
+            {{i.Name}} - {{i.Quantity}} шт.
           </li>
         </ul>
+        <hr />
         <ul>
           <li>
-            Загальна кількість товару - {{this.total}},
+            Загальна кількість товару - {{this.total}}
           </li>
           <li>
-            Загальна сума - {{this.totalSum}}
+            Сума до сплати - {{this.totalSum}}
           </li>
         </ul>
+        <button type="button" class="btn btn-danger left" (click)="back()">Повернутися</button>&nbsp;&nbsp;
+        <button type="button" class="btn btn-success right" (click)="openModal2(templateNested)">Підтвердити</button>
 
-
-        <button type="button" class="btn btn-primary" (click)="openModal2(templateNested)">Open second modal</button>
       </div>
     </ng-template>
 
@@ -66,7 +63,6 @@
       </div>
       <div class="modal-body">
         This is nested modal.<br>
-        <button *ngIf="modalRef" type="button" class="btn btn-danger" (click)="closeFirstModal()">Close first modal</button>
       </div>
     </ng-template>
 
