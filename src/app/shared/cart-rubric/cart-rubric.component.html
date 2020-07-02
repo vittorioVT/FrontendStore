@@ -44,7 +44,7 @@
           <li>
             Загальна кількість товару - {{this.total}}
           </li>
-          <li>
+          <li class="totalOrder">
             Сума до сплати - {{this.totalSum}}
           </li>
         </ul>
@@ -56,13 +56,13 @@
 
     <ng-template #templateNested>
       <div class="modal-header">
-        <h4 class="modal-title pull-left">Second modal</h4>
+        <h4 class="modal-title pull-left">Ваше замовлення відправлено. Протягом 24 годин ми з Вами зв'яжемося</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef2.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-        This is nested modal.<br>
+      <div class="modal-body totalOrder">
+        Щоб зробити ще одне замовлення, необхідно перезагрузити сторінку<br>
       </div>
     </ng-template>
 

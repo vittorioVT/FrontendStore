@@ -107,12 +107,22 @@ li{
   margin-left: 25px;
 }
 
-.modal-title h4{
- color: green;
-
+.modal-header {
+  background-color: rgb(105, 133, 76);
+  color: #fff;
+}
+.modal-body {
+  background-color: rgb(255, 255, 102);
+  font-family: Verdana;
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(105, 133, 76);
 }
 .title {
   display: inline-block;
   text-align: center;
+}
+.totalOrder {
+  color: red;
 }
 
