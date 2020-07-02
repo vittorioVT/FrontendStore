@@ -10,7 +10,7 @@ import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
   styleUrls: ['./attributs-pl.component.css']
 })
 export class AttributsPlComponent implements OnInit {
-   
+
   attribut: ProductElements[] = [];
   cartSelect: ProductElements[] = [];
 
@@ -51,6 +51,27 @@ export class AttributsPlComponent implements OnInit {
     //  console.log(this.cartSelect);
     result = null;
     this.isOrderContent = true;
+  }
+
+  clickRemove(id: number) {
+    let result = this.cartSelect.find(x => x.Id === id);
+
+    if (result.Quantity === 1 && this.cartSelect.length === 1) {
+      this.cartSelect.pop();
+      this.total = 0;
+      this.totalSum = 0;
+      result.Quantity = 0;
+      this.isOrderContent = false;
+    } else if (result.Quantity > 1) {
+      result.Quantity -= 1;
+      this.total -= 1;
+      this.totalSum -= result.Price;
+    } else if (result.Quantity === 1) {
+      result.Quantity -= 1;
+      this.total -= 1;
+      this.totalSum -= result.Price;
+      this.cartSelect = this.cartSelect.filter(x => x != result);
+    }
   }
 
 
