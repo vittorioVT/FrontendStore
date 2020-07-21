@@ -46,8 +46,9 @@ export class CartComponent implements OnInit {
     this.modalRef = this.modalService.show(template, { class: 'modal-md' });
   }
 
+    
   // функциональ второго модального окна
-
+  
   openModal2(template: TemplateRef<any>) {
     this.modalRef2 = this.modalService.show(template, { class: 'second' });
     this.modalRef.hide();
@@ -55,8 +56,15 @@ export class CartComponent implements OnInit {
     this.isOrderContent = false;
     //ощищаю корзину и дублирую массив для отправки в б/д
     this.productSelect = this.cartSelect;
-    console.log(this.productSelect);
+    this.addDataBase();
+    
     this.cartSelect = [];
+  }
+
+  addDataBase() {
+    console.log(this.productSelect);
+    console.log("Ваши данные добавились в базу данных");
+
   }
 
 

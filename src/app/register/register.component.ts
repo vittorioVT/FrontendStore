@@ -17,6 +17,7 @@ export class RegisterComponent {
     private router: Router) {
     this.registerForm = fb.group({
       userName: ['', Validators.required],
+      email: new FormControl(null, [Validators.required, , Validators.email]),
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required],
     }, { validator: matchingFields('password', 'confirmPassword') });

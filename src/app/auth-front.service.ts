@@ -11,7 +11,8 @@ export class AuthFrontService {
   baseUrl: string = 'http://localhost:13764/authfrontend/';
 
   constructor(private http: HttpClient,
-              private router: Router) { }
+    private router: Router) { }
+
   register(user) {
     return this.http.post(this.baseUrl + 'register', user);
   }

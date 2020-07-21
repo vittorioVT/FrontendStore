@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { RubricService } from '../rubric.service';
 import { ProductElements } from '../Interfaces/productElements';
 import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
+import { AuthFrontService } from '../auth-front.service';
 
 @Component({
   selector: 'app-attributs-pl',
@@ -21,7 +22,8 @@ export class AttributsPlComponent implements OnInit {
   totalSum: number = 0;
 
 
-  constructor(private rubricService: RubricService) { }
+  constructor(private rubricService: RubricService,
+              private auth: AuthFrontService) { }
 
   ngOnInit() {
     this.rubricService.get().subscribe((data) => {

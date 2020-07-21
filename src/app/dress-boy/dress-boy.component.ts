@@ -3,7 +3,8 @@ import { RubricService } from '../rubric.service';
 import { ProductElements } from '../Interfaces/productElements';
 import { MatCardModule, MatCardContent, MatCard } from '@angular/material';
 import { Observable } from 'rxjs';
-//import { CartRubricComponent } from '../shared/cart-rubric';
+import { AuthFrontService } from '../auth-front.service';
+
 
 
 @Component({
@@ -22,7 +23,8 @@ export class DressBoyComponent implements OnInit {
   total: number = 0;
   totalSum: number = 0;
 
-  constructor(private rubricService: RubricService) { }
+  constructor(private rubricService: RubricService,
+              private auth: AuthFrontService) { }
 
   ngOnInit() {
     this.rubricService.get().subscribe((data) => {
