@@ -88,5 +88,9 @@ export class ProductsStoreComponent implements OnInit {
     }
   }
 
+  openModel(template) {
+    console.log("Щоб придбати товар, спочатку потрібно зареєструватися!");
+  }
+
 }
 

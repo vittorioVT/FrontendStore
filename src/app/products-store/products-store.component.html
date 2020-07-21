@@ -28,7 +28,7 @@
           </mat-card-content>
           <mat-card-actions>
             <span class="price">{{items.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-            <button mat-button mat-raised-button (click)="addCart(items.Id)" class="button">Купити</button>
+            <button mat-button mat-raised-button (click)="auth.isAuthenticated ? addCart(items.Id): openModel(template)" class="button">Купити</button>
           </mat-card-actions>
         </mat-card>
       </div>
@@ -47,7 +47,7 @@
           </mat-card-content>
           <mat-card-actions>
             <span class="price">{{items.Price }} грн. </span>&nbsp;&nbsp;&nbsp;
-            <button mat-button mat-raised-button (click)="addCart(items.Id)" class="button">Купити</button>
+            <button mat-button mat-raised-button (click)="auth.isAuthenticated ? addCart(items.Id): openModel1()" class="button">Купити</button>
           </mat-card-actions>
         </mat-card>
       </div>

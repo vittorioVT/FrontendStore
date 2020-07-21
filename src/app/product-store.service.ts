@@ -8,8 +8,6 @@ import { ProductElements } from './Interfaces/productElements';
 })
 export class ProductStoreService {
 
-  //public newCarts = [];
-  //public cartsCount = [];
   baseUrl: string ='http://localhost:13764/api/products'
 
   constructor(private http: HttpClient) { }
@@ -18,13 +16,5 @@ export class ProductStoreService {
     return this.http.get<ProductElements[]>(this.baseUrl);
   }
 
-  //public add(id: number, name: string, picture: string, price: number, quantity: number) {
-    
-  //  this.newCarts.push({id, name, picture, price, quantity});
-  //  return this.newCarts;
-
-  //}
-
-
-
+  
 }
