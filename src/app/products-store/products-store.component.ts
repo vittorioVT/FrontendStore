@@ -1,11 +1,11 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
 import { ProductStoreService } from '../product-store.service';
 import { MatCardModule, MatCardContent, MatCard, MatSort, MatTableDataSource, MatPaginator } from '@angular/material';
 import { ProductElements } from '../Interfaces/productElements';
 import { IAppState } from '../Interfaces/IAppState';
 import { RubricService } from '../rubric.service';
 import { AuthFrontService } from '../auth-front.service';
-
+import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 
 
 @Component({
@@ -15,6 +15,7 @@ import { AuthFrontService } from '../auth-front.service';
 })
 export class ProductsStoreComponent implements OnInit {
 
+  modalRef: BsModalRef;
 
   datasource: ProductElements[] = [];
   cartSelect: ProductElements[] = [];
@@ -28,7 +29,8 @@ export class ProductsStoreComponent implements OnInit {
     searchValue: '';
   
   constructor(private service: ProductStoreService,
-                    private auth: AuthFrontService) { }
+    private auth: AuthFrontService,
+    private modalService: BsModalService) { }
 
   ngOnInit() {
     this.service.getAll().subscribe((data) => {
@@ -88,8 +90,9 @@ export class ProductsStoreComponent implements OnInit {
     }
   }
 
-  openModel(template) {
-    console.log("Щоб придбати товар, спочатку потрібно зареєструватися!");
+  openModel(template: TemplateRef<any>) {
+    this.modalRef = this.modalService.show(template);
+    
   }
 
 }

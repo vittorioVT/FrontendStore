@@ -5,6 +5,8 @@ import { MatCard } from '@angular/material';
 
 import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { UserService } from 'src/app/user.service';
+import { Users } from 'src/app/Interfaces/users';
 
 
 
@@ -26,15 +28,32 @@ export class CartComponent implements OnInit {
 
   productSelect: ProductElements[] = [];
 
+  name: string = 'mimi';
+  password: string = '123';
+  userId: number = 0;
+  usersArray: Users[] = [];
+  
  //создаем свое событие
   @Output() clickRemove: EventEmitter<ProductElements[]> = new EventEmitter();
 
 
-  constructor(private modalService: BsModalService) {
-  }
+  constructor(private modalService: BsModalService,
+              private serviceUser: UserService) {}
 
   ngOnInit() {
+    this.getId(this.name, this.password);
   }
+
+  
+getId(name: string, password: string) {
+    this.serviceUser.get().subscribe((user) => {
+      this.usersArray = user.filter(x => x.UserName === name && x.Password === password);
+      //console.log(this.usersArray[0].Id);
+      this.userId = this.usersArray[0].Id;
+      return this.userId;
+    })
+  }
+   
 
   removeFromCart(id: any) {
     this.clickRemove.emit(id);
@@ -63,6 +82,7 @@ export class CartComponent implements OnInit {
 
   addDataBase() {
     console.log(this.productSelect);
+    console.log(this.userId);
     console.log("Ваши данные добавились в базу данных");
 
   }

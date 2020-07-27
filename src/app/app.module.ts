@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { ProductsStoreComponent } from './products-store/products-store.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
-import { ProductStoreService } from './product-store.service';
+
 
 //service
 import { AppRouterModule } from './app-router.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthFrontService } from './auth-front.service';
 import { CartService } from './cart.service';
+import { ProductStoreService } from './product-store.service';
+import { UserService } from './user.service';
 
 //ngx-bootstrap
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -43,7 +45,6 @@ import { SearchPipe } from './search.pipe';
 import { CartComponent } from './products-store/cart/cart.component';
 import { CartRubricComponent } from './shared/cart-rubric/cart-rubric.component';
 import { ModalComponent } from './shared/modal/modal.component';
-
 
 
 
@@ -96,7 +97,7 @@ import { ModalComponent } from './shared/modal/modal.component';
   entryComponents: [
     ModalComponent
   ],
-  providers: [ProductStoreService, AuthFrontService, CartService],
+  providers: [ProductStoreService, AuthFrontService, CartService, UserService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

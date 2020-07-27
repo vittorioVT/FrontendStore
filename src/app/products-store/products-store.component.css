@@ -96,3 +96,20 @@
   flex-wrap: wrap;
   width: 100%;
 }
+
+.modal-header {
+  background-color: rgb(105, 133, 76);
+  color: #fff;
+}
+
+.modal-body {
+  background-color: rgb(255, 255, 102);
+  font-family: Verdana;
+  color: rgb(105, 133, 76);
+}
+
+.title {
+  display: inline-block;
+  text-align: center;
+  font-weight: bold;
+}
