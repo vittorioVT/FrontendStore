@@ -52,13 +52,14 @@
 
   <div class="row navbar navbar-dark navbar-expand-lg header2">
     <a class="navbar-brand" href="#"></a>
-     <button class="navbar-toggler navbar-toggler-right" type="button" 
-            id="nav-main" (click)="isCollapsed2 = !isCollapsed2"
-            [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseBasic2">
-      <span class="navbar-toggler-icon" id="spanColor"></span>
-    </button>
 
-    <div class="collapse navbar-collapse navbar-nav" id="collapseBasic2" [collapse]="isCollapsed2" [isAnimated]="true">
+   <!--<button class="navbar-toggler navbar-toggler-right" type="button"
+          id="nav-main" (click)="isCollapsed2 = !isCollapsed2"
+          [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseBasic2">
+    <span class="navbar-toggler-icon" id="spanColor"></span>
+  </button>-->
+
+    <div class="collapse navbar-collapse navbar-nav" id="collapseBasic1" [collapse]="isCollapsed1" [isAnimated]="true">
 
       <div class="nav-item col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <button class="nav-link" mat-button routerLink="/dressboy">одяг для хлопців</button>

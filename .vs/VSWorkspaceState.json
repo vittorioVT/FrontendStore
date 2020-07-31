@@ -3,13 +3,14 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\header",
     "\\src\\app\\Interfaces",
+    "\\src\\app\\login",
     "\\src\\app\\products-store",
     "\\src\\app\\products-store\\cart",
     "\\src\\app\\register",
-    "\\src\\app\\shared",
-    "\\src\\app\\shared\\cart-rubric"
+    "\\src\\app\\shared"
   ],
-  "SelectedNode": "\\src\\app\\Interfaces\\users.ts",
+  "SelectedNode": "\\src\\app\\products-store\\cart\\cart.component.ts",
   "PreviewInSolutionExplorer": false
 }

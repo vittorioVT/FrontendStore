@@ -25,6 +25,7 @@ export class ProductsStoreComponent implements OnInit {
   quantity: number = 1;
   total: number = 0;
   totalSum: number = 0;
+  
 
     searchValue: '';
   

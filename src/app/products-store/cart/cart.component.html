@@ -41,11 +41,17 @@
           </li>
           <li class="totalOrder">
             Сума до сплати - {{this.totalSum}}
-          </li>
+          </li> 
         </ul>
+
+        <span>Тут Ви можете залишити свій коментар: </span>
+        <textarea id="textarea">
+        </textarea>
+
         <button type="button" class="btn btn-danger left" (click)="back()">Повернутися</button>&nbsp;&nbsp;
         <button type="button" class="btn btn-success right" (click)="openModal2(templateNested)">Підтвердити</button>
       </div>
+      
     </ng-template>
 
     <ng-template #templateNested>

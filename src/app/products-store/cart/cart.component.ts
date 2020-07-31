@@ -2,11 +2,12 @@ import { Component, OnInit, Input, Output} from '@angular/core';
 import { ProductElements } from 'src/app/Interfaces/productElements';
 import { EventEmitter } from '@angular/core';
 import { MatCard } from '@angular/material';
-
 import { TemplateRef } from '@angular/core';
 import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
 import { UserService } from 'src/app/user.service';
 import { Users } from 'src/app/Interfaces/users';
+import { LoginComponent } from 'src/app/login/login.component';
+import { AuthFrontService } from 'src/app/auth-front.service';
 
 
 
@@ -25,12 +26,12 @@ export class CartComponent implements OnInit {
   @Input() isOrderContent;
   @Input() total;
   @Input() totalSum;
-
+  
   productSelect: ProductElements[] = [];
-
-  name: string = 'mimi';
-  password: string = '123';
+  login: LoginComponent;
+  name: string;
   userId: number = 0;
+  email: string;
   usersArray: Users[] = [];
   
  //создаем свое событие
@@ -38,22 +39,22 @@ export class CartComponent implements OnInit {
 
 
   constructor(private modalService: BsModalService,
-              private serviceUser: UserService) {}
+    private serviceUser: UserService,
+    private service: AuthFrontService) { }
 
   ngOnInit() {
-    this.getId(this.name, this.password);
+    this.name = this.service.getUserName();
+    this.getId(this.name);
   }
 
-  
-getId(name: string, password: string) {
+getId(name: string) {
     this.serviceUser.get().subscribe((user) => {
-      this.usersArray = user.filter(x => x.UserName === name && x.Password === password);
-      //console.log(this.usersArray[0].Id);
+      this.usersArray = user.filter(x => x.UserName === name);
       this.userId = this.usersArray[0].Id;
-      return this.userId;
+      this.email = this.usersArray[0].Email;
+      console.log(this.userId, this.email);
     })
   }
-   
 
   removeFromCart(id: any) {
     this.clickRemove.emit(id);
@@ -83,6 +84,7 @@ getId(name: string, password: string) {
   addDataBase() {
     console.log(this.productSelect);
     console.log(this.userId);
+    console.log(this.email);
     console.log("Ваши данные добавились в базу данных");
 
   }
