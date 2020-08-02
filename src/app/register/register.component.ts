@@ -29,9 +29,12 @@ export class RegisterComponent {
       localStorage.setItem('userName', data.UserName);
       localStorage.setItem('token_value', data.Token);
       this.router.navigate(['/']);
-    })
+    },
+      (error) => alert(error.error.Message));
   }
+
 }
+
 
   function matchingFields(field1, field2) {
     return form => {

@@ -16,7 +16,8 @@ export class AuthFrontService {
   register(user) {
     return this.http.post(this.baseUrl + 'register', user);
   }
-  
+
+ 
   login(user) {
     return this.http.post(this.baseUrl + 'login', user);
   }
